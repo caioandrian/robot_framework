@@ -1,0 +1,16 @@
+{
+  "name": "curso_robot_framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "robot:contas": "robot -d ./results ./teste_selenium/contas.robot",
+    "robot:movimentacoes": "robot -d ./results ./teste_selenium/movimentacoes.robot",
+    "robot:login_invalido": "robot -d ./results ./teste_selenium/login_invalido.robot",
+    "robot:selenium": "robot -d ./results ./teste_selenium/*.robot",
+    "robot:exemplos": "robot -d ./results ./teste_exemplos_robot_framework/*.robot"
+  },
+  "keywords": [],
+  "author": "Caio Andrian",
+  "license": "MIT"
+}

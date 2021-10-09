@@ -1,0 +1,80 @@
+*** Settings ***
+Library     SeleniumLibrary
+Library     OperatingSystem
+Documentation   Exemplo usando robot e selenium para um cadastro
+
+*** Variables ***
+#campos do formulário
+${INPUT_NOME_DO_CLIENTE}      id=nome_cliente
+${INPUT_CPF}      id=cpf
+${INPUT_DTNASC}      id=dtnasc
+${INPUT_CEP}      id=cep
+${INPUT_END_NUMERO}      id=numero
+${INPUT_END_RUA}      id=rua
+${SELECT_ESTADO_CIVIL}      id=estado-civil
+${RADIO_XPATH_SEXO}      xpath=//input[@value='masculino']
+${CHECK_XPATH_OPT_TESTES_AUTOMATIZADOS}      xpath=//span[contains(text(), "Testes Automatizados")]/preceding::input[1]
+${CHECK_XPATH_OPT_VIDEO_GAME}      xpath=//span[contains(text(), "Video Games")]/preceding::input[1]
+${BTN_XPATH_PESQUISAR}      xpath=//button[text()='Pesquisar']
+${BTN_CADASTRAR}      id=cadastrar
+${CAMPO_MSG}      id=msg
+
+${NAVEGADOR}    chrome
+${URL_PAGINA}      https://estivalet.github.io/robot-static-testing-site/cadastro/index.html
+${TITULO_PAGINA}     Cadastro de Clientes
+
+#valores para preencher o formulário
+${VALOR_ENDEREÇO}     Rua Otávio de Farias
+${NOME_CLIENTE}      José Da Silva
+${CPF}      1234567890
+${DTNASC}      22091900
+${CEP}      21842640
+${END_NUM}      347
+${ESTADO_CIVIL}      Casado(a)
+
+${MENSAGEM_SUCESSO}      Cliente cadastrado com sucesso!
+${MENSAGEM_NOME_OBRIGATORIO}    Nome é obrigatório!
+${MENSAGEM_CPF_OBRIGATORIO}    CPF é obrigatório!
+
+${PATH_SCREENSHOTS}     ./results/screenshots/
+${SCREENSHOT_FILE}      ${PREV TEST NAME}.png
+
+*** Keywords ***
+Validar mensagem de cliente cadastrado com sucesso
+    Wait Until Page contains    ${MENSAGEM_SUCESSO}
+    Sleep   2s
+
+Cadastrar o cliente
+    Click Element   ${BTN_CADASTRAR}
+    Wait Until Element Is Visible   ${CAMPO_MSG}
+
+Preencher o nome do Cliente
+    Input Text      ${INPUT_NOME_DO_CLIENTE}     ${NOME_CLIENTE} 
+
+Preencher campos do formulário de cadastro de cliente
+    Preencher o nome do Cliente
+    Input Text      ${INPUT_CPF}     ${CPF} 
+    Input Text      ${INPUT_DTNASC}     ${DTNASC} 
+    Click Element       ${RADIO_XPATH_SEXO}
+    Input Text      ${INPUT_CEP}      ${CEP}
+    Click Element       ${BTN_XPATH_PESQUISAR}
+    Wait Until Keyword Succeeds      10s     200ms      Aguardar o valor ${VALOR_ENDEREÇO} no elemento ${INPUT_END_RUA} estar presente
+    Input Text  ${INPUT_END_NUMERO}   ${END_NUM}
+    Select From List By value   ${SELECT_ESTADO_CIVIL}     ${ESTADO_CIVIL}
+    Click Element   ${CHECK_XPATH_OPT_TESTES_AUTOMATIZADOS}
+    Click Element   ${CHECK_XPATH_OPT_VIDEO_GAME}
+
+Aguardar o valor ${valor_esperado} no elemento ${elemento} estar presente
+    ${valor_atual}=      Get Element Attribute       ${elemento}     value
+    Should Be Equal As Strings      ${valor_atual}      ${valor_esperado}
+
+Validar a mensagem informando que o campo nome é obrigatório
+    Wait Until Page contains    ${MENSAGEM_NOME_OBRIGATORIO}
+
+Validar a mensagem informando que o campo cpf é obrigatório
+    Wait Until Page contains    ${MENSAGEM_NOME_OBRIGATORIO}
+
+Print da mensagem
+    Remove files  ${PATH_SCREENSHOTS}/*.png
+    Set Screenshot Directory    ${PATH_SCREENSHOTS}
+    Capture Element Screenshot      ${CAMPO_MSG}        ${PREV TEST NAME}.png    
