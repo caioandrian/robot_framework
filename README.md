@@ -7,11 +7,21 @@ Conteúdo básico do curso + testes adicionais.
 
 <br/>
 
-#### **Resources**:
+### ---- Pré-Requisitos ----
+- Download da Linguagem Python (https://www.python.org/downloads/)
+- Python com PIP
+- python --version
+- pip --version
+- Download do Robot Framework via linha de comando no terminal: pip install robotframework
+- robot --version
+- Download do chrome driver (https://chromedriver.chromium.org/downloads), salvar dentro da pasta scripts onde foi instalado o Python na sua máquina.
+<br/>
+
+#### **Página e APP usados durante os testes**:
 - website: https://barrigareact.wcaquino.me
 - app: (em breve)
 
-#### **Bibliotecas**:
+#### **Bibliotecas do Robot**:
 - Selenium Library
 - Appium Library (em breve)
 
@@ -37,16 +47,9 @@ Conteúdo básico do curso + testes adicionais.
 
 <br/>
 
-### ---- Instalação e Configuração do Robot Framework ----
+### ---- Gerenciador de pacotes NPM (OPCIONAL) ----
+A utilização do NPM é opcional, portanto, você pode ignorar os passos abaixo e excluir os arquivos package.json, package-lock.json do projeto. Caso tenha optado por ignorar a utilização do NPM, será preciso rodar os comandos de execução dos testes como no exemplo: <robot -d ./results ./teste_selenium/selenium.robot>.
 <br/>
-Atenção! É preciso ter instalado o robot framework na sua máquina.
-Em breve irei adicionar o passo a passo para instalação (é simples).
-
-<br/>
-### ---- Lista de dependências ----
-<br/>
-
-    { }
 
 **Instalar dependências via node**
 > npm i (apenas para criar a pasta node_modules)
