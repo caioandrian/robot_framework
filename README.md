@@ -63,17 +63,29 @@ Conteúdo básico do curso + testes adicionais.
 **Instalar dependências via node**
 > npm i
 
+**Executar todos testes de exemplo do robot framework**
+> npm run robot:exemplos
+
+Comandos para rodar os testes com Selenium
+
 **Executar todos testes com selenium webdriver**
 > npm run robot:selenium
+
+**Executar todos testes com massa de dados**
+> npm run robot:login_invalido
+
+Comandos para rodar testes com Appium:
+
+**Iniciar o appium**
+> appium
+
+**Iniciar o ADB**
+> adb start-server
 
 **Executar todos testes com appium**
 > npm run robot:appium
 
-**Executar todos testes com massa de dados**
-> npm run robot:login_invalido
-> 
-**Executar todos testes de exemplo do robot framework**
-> npm run robot:exemplos
+Observação: Para executar os testes com appium é preciso antes inicializar o device pelo AVD Manager no Android Studio.
 
 <br/>
 
