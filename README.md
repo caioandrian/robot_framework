@@ -8,13 +8,17 @@ Conteúdo básico do curso + testes adicionais.
 <br/>
 
 ### ---- Pré-Requisitos ----
+- Sistema Operacional Windows
 - Download da Linguagem Python (https://www.python.org/downloads/)
-- Python com PIP
+- Marcar opção de instalar o PIP durante instalação do Python
 - python --version
 - pip --version
 - Download do Robot Framework via linha de comando no terminal: pip install robotframework
 - robot --version
-- Download do chrome driver (https://chromedriver.chromium.org/downloads), salvar dentro da pasta scripts onde foi instalado o Python na sua máquina.
+- Download so Selenium Library: pip install robotframework-seleniumlibrary
+- Download do Geckodriver: https://github.com/mozilla/geckodriver/releases
+- Download do chrome driver (https://chromedriver.chromium.org/downloads)
+- Salvar ambos os arquivos executáveis (geckodriver e chrome driver), dentro da pasta scripts onde foi instalado o Python na sua máquina.
 <br/>
 
 #### **Página e APP usados durante os testes**:
