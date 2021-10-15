@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211015 15:26:09.791" rpa="false" schemaversion="2">
+<suite id="s1" name="Contas" source="C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\teste_selenium\contas.robot">
+<kw name="Abrir navegador na página de exemplo" library="login" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL_PAGINA}</arg>
+<arg>${NAVEGADOR_CHROME}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20211015 15:26:09.963" level="INFO">Opening browser 'chrome' to base url 'https://barrigareact.wcaquino.me/'.</msg>
+<status status="FAIL" starttime="20211015 15:26:09.962" endtime="20211015 15:26:11.010"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20211015 15:26:11.010" endtime="20211015 15:26:11.010"/>
+</kw>
+<kw name="Remove Files" library="OperatingSystem">
+<arg>${PATH_SCREENSHOTS}/*.png</arg>
+<doc>Uses `Remove File` to remove multiple files one-by-one.</doc>
+<status status="NOT RUN" starttime="20211015 15:26:11.010" endtime="20211015 15:26:11.011"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${PATH_SCREENSHOTS}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="NOT RUN" starttime="20211015 15:26:11.011" endtime="20211015 15:26:11.011"/>
+</kw>
+<status status="FAIL" starttime="20211015 15:26:09.962" endtime="20211015 15:26:11.011"/>
+</kw>
+<test id="s1-t1" name="Criar uma conta com nome válido">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20211015 15:26:11.011" endtime="20211015 15:26:11.012">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t2" name="Criar uma conta com nome que já existe">
+<tag>robot:exit</tag>
+<status status="FAIL" starttime="20211015 15:26:11.014" endtime="20211015 15:26:13.127">Test execution stopped due to a fatal error.</status>
+</test>
+<kw name="Fechar navegador" library="login" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20211015 15:26:13.128" endtime="20211015 15:26:13.128"/>
+</kw>
+<status status="PASS" starttime="20211015 15:26:13.128" endtime="20211015 15:26:13.128"/>
+</kw>
+<doc>Testes para validar o cadastrado de novas contas.</doc>
+<status status="FAIL" starttime="20211015 15:26:09.793" endtime="20211015 15:26:13.128">Suite setup failed:
+Execution terminated by signal</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="0" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat pass="0" fail="2" skip="0" id="s1" name="Contas">Contas</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -8,7 +8,7 @@ ${NAVEGADOR_CHROME}    chrome
 ${NAVEGADOR_CHROMEHEADLESS}     headlesschrome
 ${URL_PAGINA}      https://barrigareact.wcaquino.me/
 
-${PATH_SCREENSHOTS}     ./results/screenshots/
+${PATH_SCREENSHOTS}     ./results/selenium/screenshots/
 
 #campos
 ${INPUT_EMAIL}      //*[@data-test="email"]

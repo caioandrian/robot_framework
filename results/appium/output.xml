@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211015 16:41:26.475" rpa="false" schemaversion="2">
+<suite id="s1" name="Aplicacao Hibrida" source="C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\teste_appium\aplicacao_hibrida.robot">
+<kw name="Open Test Application" library="base" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICENAME}</arg>
+<arg>appPackage=${ANDROID_APPPACKAGE}</arg>
+<arg>appActivity=com.ctappium.MainActivity</arg>
+<arg>noReset=True</arg>
+<arg>chromedriverExecutable=${CHROME_DRIVER}</arg>
+<arg>nativeWebScreenshot=True</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20211015 16:41:26.717" endtime="20211015 16:41:31.628"/>
+</kw>
+<kw name="Remove Files" library="OperatingSystem">
+<arg>${PATH_SCREENSHOTS}/*.png</arg>
+<doc>Uses `Remove File` to remove multiple files one-by-one.</doc>
+<msg timestamp="20211015 16:41:31.629" level="INFO" html="true">File '&lt;a href="file://C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\appium\*.png"&gt;C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\appium\*.png&lt;/a&gt;' does not exist.</msg>
+<status status="PASS" starttime="20211015 16:41:31.629" endtime="20211015 16:41:31.629"/>
+</kw>
+<status status="PASS" starttime="20211015 16:41:26.717" endtime="20211015 16:41:31.629"/>
+</kw>
+<test id="s1-t1" name="Fazer login">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Launch Application</arg>
+<arg>AND</arg>
+<arg>Valida se a tela principal está visível</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Launch Application" library="AppiumLibrary">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20211015 16:41:31.632" endtime="20211015 16:41:32.465"/>
+</kw>
+<kw name="Valida se a tela principal está visível" library="base">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${ELEMENTO}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211015 16:41:32.466" endtime="20211015 16:41:33.894"/>
+</kw>
+<status status="PASS" starttime="20211015 16:41:32.466" endtime="20211015 16:41:33.894"/>
+</kw>
+<status status="PASS" starttime="20211015 16:41:31.631" endtime="20211015 16:41:33.895"/>
+</kw>
+<kw name="Acessar menu" library="menu">
+<arg>SeuBarriga Híbrido</arg>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${texto}</arg>
+<arg>20s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20211015 16:41:33.897" endtime="20211015 16:41:34.322"/>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${texto}</arg>
+<doc>Click text identified by ``text``.</doc>
+<status status="PASS" starttime="20211015 16:41:34.323" endtime="20211015 16:41:34.656"/>
+</kw>
+<status status="PASS" starttime="20211015 16:41:33.896" endtime="20211015 16:41:34.657"/>
+</kw>
+<kw name="Trocar para contexto WEBVIEW" library="aplicacao_hibrida">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${CONTEXTO_WEBVIEW}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211015 16:41:34.660" endtime="20211015 16:41:34.895"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211015 16:41:35.909" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20211015 16:41:34.895" endtime="20211015 16:41:35.909"/>
+</kw>
+<kw name="Get Contexts" library="AppiumLibrary">
+<var>${contextos}</var>
+<doc>Get available contexts.</doc>
+<msg timestamp="20211015 16:41:36.580" level="INFO">['NATIVE_APP', 'WEBVIEW_com.ctappium']</msg>
+<msg timestamp="20211015 16:41:36.580" level="INFO">${contextos} = ['NATIVE_APP', 'WEBVIEW_com.ctappium']</msg>
+<status status="PASS" starttime="20211015 16:41:35.909" endtime="20211015 16:41:36.580"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n${contextos}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211015 16:41:36.580" endtime="20211015 16:41:36.581"/>
+</kw>
+<kw name="Switch To Context" library="AppiumLibrary">
+<arg>WEBVIEW_com.ctappium</arg>
+<doc>Switch to a new context</doc>
+<status status="PASS" starttime="20211015 16:41:36.581" endtime="20211015 16:41:42.126"/>
+</kw>
+<kw name="Get Current Context" library="AppiumLibrary">
+<var>${contexto_atual}</var>
+<doc>Get current context.</doc>
+<msg timestamp="20211015 16:41:42.161" level="INFO">${contexto_atual} = WEBVIEW_com.ctappium</msg>
+<status status="PASS" starttime="20211015 16:41:42.127" endtime="20211015 16:41:42.163"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${contexto_atual}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20211015 16:41:42.163" endtime="20211015 16:41:42.166"/>
+</kw>
+<status status="PASS" starttime="20211015 16:41:34.659" endtime="20211015 16:41:42.166"/>
+</kw>
+<kw name="Fazer login na aplicacao hÍbrida" library="aplicacao_hibrida">
+<arg>caio@caio</arg>
+<arg>123</arg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>${INPUT_WEBVIEW_LOGIN}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20211015 16:41:42.168" endtime="20211015 16:41:42.455"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${INPUT_WEBVIEW_LOGIN}</arg>
+<arg>${login}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20211015 16:41:42.458" level="INFO">Typing text 'caio@caio' into text field 'id=email'</msg>
+<status status="PASS" starttime="20211015 16:41:42.457" endtime="20211015 16:41:45.942"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${INPUT_WEBVIEW_SENHA}</arg>
+<arg>${senha}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20211015 16:41:45.945" level="INFO">Typing text '123' into text field 'id=senha'</msg>
+<status status="PASS" starttime="20211015 16:41:45.942" endtime="20211015 16:41:46.508"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${BTN_WEBVIEW_ENTRAR}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211015 16:41:46.512" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20211015 16:41:46.509" endtime="20211015 16:41:47.481"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20211015 16:41:48.005" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-1.png"&gt;&lt;img src="appium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211015 16:41:47.481" endtime="20211015 16:41:48.005"/>
+</kw>
+<status status="PASS" starttime="20211015 16:41:42.166" endtime="20211015 16:41:48.005"/>
+</kw>
+<kw name="Valida se o texto está visível" library="base">
+<arg>Bem vindo, Caio!</arg>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>${texto}</arg>
+<arg>20s</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<status status="PASS" starttime="20211015 16:41:48.006" endtime="20211015 16:41:48.046"/>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<arg>${texto}</arg>
+<doc>Verifies that current page contains `text`.</doc>
+<msg timestamp="20211015 16:41:48.080" level="INFO">Current page contains text 'Bem vindo, Caio!'.</msg>
+<status status="PASS" starttime="20211015 16:41:48.046" endtime="20211015 16:41:48.080"/>
+</kw>
+<status status="PASS" starttime="20211015 16:41:48.006" endtime="20211015 16:41:48.080"/>
+</kw>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20211015 16:41:48.568" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="appium-screenshot-2.png"&gt;&lt;img src="appium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211015 16:41:48.081" endtime="20211015 16:41:48.568"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Quit Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Quit Application" library="AppiumLibrary">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20211015 16:41:48.569" endtime="20211015 16:41:48.772"/>
+</kw>
+<status status="PASS" starttime="20211015 16:41:48.569" endtime="20211015 16:41:48.772"/>
+</kw>
+<status status="PASS" starttime="20211015 16:41:31.630" endtime="20211015 16:41:48.773"/>
+</test>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20211015 16:41:48.774" endtime="20211015 16:41:48.949"/>
+</kw>
+<doc>Teste para validar interação com uma aplicação hÍbrida / webview</doc>
+<status status="PASS" starttime="20211015 16:41:26.477" endtime="20211015 16:41:48.949"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Aplicacao Hibrida">Aplicacao Hibrida</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

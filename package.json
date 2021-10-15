@@ -4,13 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "robot:contas": "robot -d ./results ./teste_selenium/contas.robot",
-    "robot:movimentacoes": "robot -d ./results ./teste_selenium/movimentacoes.robot",
-    "robot:login_invalido": "robot -d ./results ./teste_selenium/login_invalido.robot",
-    "robot:selenium": "robot -d ./results ./teste_selenium/*.robot",
+    "robot:selenium-contas": "robot -d ./results/selenium ./teste_selenium/contas.robot",
+    "robot:selenium-movimentacoes": "robot -d ./results/selenium ./teste_selenium/movimentacoes.robot",
+    "robot:selenium-login_invalido": "robot -d ./results/selenium ./teste_selenium/login_invalido.robot",
+    "robot:selenium": "robot -d ./results/selenium ./teste_selenium/*.robot",
+    "robot:appium": "robot -d ./results ./teste_appium/*.robot",
+    "robot:appium-accordion": "robot -d ./results/appium ./teste_appium/accordion.robot",
+    "robot:appium-abas": "robot -d ./results/appium ./teste_appium/abas.robot",
+    "robot:appium-cliques": "robot -d ./results/appium ./teste_appium/cliques.robot",
+    "robot:appium-alertas": "robot -d ./results/appium ./teste_appium/alertas.robot",
+    "robot:appium-dragndrop": "robot -d ./results/appium ./teste_appium/dragndrop.robot",
+    "robot:appium-menu-escondido": "robot -d ./results/appium ./teste_appium/menu_escondido.robot",
+    "robot:appium-formulario": "robot -d ./results/appium ./teste_appium/formulario.robot",
+    "robot:appium-aplicacao-nativa": "robot -d ./results/appium ./teste_appium/aplicacao_nativa.robot",
+    "robot:appium-aplicacao-hibrida": "robot -d ./results/appium ./teste_appium/aplicacao_hibrida.robot",
+    "robot:appium-swipe": "robot -d ./results/appium ./teste_appium/swipe.robot",
     "robot:exemplos": "robot -d ./results ./teste_exemplos_robot_framework/*.robot"
   },
   "keywords": [],
   "author": "Caio Andrian",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "webdriverio": "^7.14.1"
+  }
 }
