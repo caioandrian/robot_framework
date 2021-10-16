@@ -1,6 +1,8 @@
 *** Settings ***
 Library  AppiumLibrary
 Library     OperatingSystem
+Library     DateTime
+Library      ScreenCapLibrary   quality=100
 
 *** Variables ***
 #variáveis de configuração
@@ -12,6 +14,8 @@ ${ANDROID_APPPACKAGE}         com.ctappium
 ${CHROME_DRIVER}              ./resources/chromedriver244.exe
 
 ${PATH_SCREENSHOTS}     ./results/appium/
+${PATH_VIDEOS}     ./results/appium/videos/
+
 
 #variáveis de teste
 ${ELEMENTO}     xpath=//android.widget.ScrollView
@@ -28,6 +32,9 @@ Open Test Application
     #...   platformVersion=${ANDROID_PLATFORM_VERSION}
     #...   app=${ANDROID_APP}
     Remove files  ${PATH_SCREENSHOTS}/*.png
+    Remove files  ${PATH_VIDEOS}/*.gif
+    ScreenCapLibrary.Set Screenshot Directory    ${PATH_VIDEOS}
+    Start Gif Recording     embed_width=1200px      size_percentage=1
 
 Valida se a tela principal está visível
     Wait Until Page Contains Element        ${ELEMENTO}
@@ -123,4 +130,3 @@ Tocar na tela pelas coordenadas
     Sleep   2s
     Tap     locator=${None}     x_offset=${x}     y_offset=${y}     count=1
     Sleep   2s
-    

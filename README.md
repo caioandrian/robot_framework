@@ -19,6 +19,7 @@ Conteúdo básico do curso + testes adicionais.
 - Download do Geckodriver: https://github.com/mozilla/geckodriver/releases
 - Download do chrome driver (https://chromedriver.chromium.org/downloads)
 - Salvar ambos os arquivos executáveis (geckodriver e chrome driver), dentro da pasta scripts onde foi instalado o Python na sua máquina.
+
 <br/>
 
 ### ---- Pré-Requisitos Robot com Appium Library ----
@@ -28,6 +29,14 @@ Conteúdo básico do curso + testes adicionais.
 - iniciar o device pelo AVD Manager do Android Studio.
 - comandos para iniciar a ligação com o appium: appium, adb kill-server, adb start-server, adb-devices
 - videos adicionais de ajuda: https://www.youtube.com/watch?v=QYT0_qgkiCw / https://www.youtube.com/watch?v=0a5NAJjUBbA
+
+<br/>
+
+Na versão 2.1 foi adicionado uma nova Biblioteca chamada **ScreenCapLibrary**. 
+
+Por favor, instale usando o comando via terminal.
+> pip install --upgrade robotframework-screencaplibrary
+
 <br/>
 
 #### **Página e APP usados durante os testes**:

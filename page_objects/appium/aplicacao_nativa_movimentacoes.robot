@@ -1,7 +1,3 @@
-*** Settings ***
-Library  AppiumLibrary
-Library     DateTime
-
 *** Variables ***
 ${APLICACAO_MENU_SUPERIOR}      class=android.widget.HorizontalScrollView
 ${APLICACAO_MENU_MOVIMENTACOES}   //*[@text='MOV...']
@@ -69,23 +65,23 @@ Selecionar a conta da movimentação
     Wait Until Page Contains        ${conta}
     Click Text      ${conta}
 
-Salvar data
+Salvar a data
     Click Element   ${BTN_OK_FORM_DATA}
 
-Salvar movimentação
+Salvar a movimentação
     Wait Until Page Contains Element       ${TXT_BTN_SALVAR}
     Click Element   ${TXT_BTN_SALVAR}
 
 Valida campos obrigatórios
     Valida mensagem de campo obrigatório    Descrição
     Preencher a descrição da movimentação    prêmio da loteria
-    Salvar movimentação
+    Salvar a movimentação
     Valida mensagem de campo obrigatório    Interessado
     Preencher o interessado da movimentação     Eu mesmo
-    Salvar movimentação
+    Salvar a movimentação
     Valida mensagem de campo obrigatório    Valor
     Preencher o valor da movimentação     2000,50
-    Salvar movimentação
+    Salvar a movimentação
     Valida mensagem de campo obrigatório    Conta
     Selecionar a conta da movimentação     Conta para saldo
 

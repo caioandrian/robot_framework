@@ -1,6 +1,3 @@
-*** Settings ***
-Library  AppiumLibrary
-
 *** Variables ***
 ${INPUT_FORMULARIO_NOME}      accessibility_id=nome
 ${OPCAO_COMBO_CONSOLE}      class=android.widget.Spinner

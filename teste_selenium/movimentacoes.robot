@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Testes para validar o CRUD de movimentações
 Resource    ../page_objects/selenium/login.robot
-Resource    ../page_objects/selenium/head.robot
+Resource    ../page_objects/selenium/base.robot
 Resource    ../page_objects/selenium/contas.robot
 Resource    ../page_objects/selenium/extratos.robot
 Resource    ../page_objects/selenium/movimentacoes.robot

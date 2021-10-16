@@ -1,6 +1,3 @@
-*** Settings ***
-Library  AppiumLibrary
-
 *** Keywords ***
 Acessar menu
     [Arguments]     ${texto}

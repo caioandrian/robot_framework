@@ -1,6 +1,3 @@
-*** Settings ***
-Library  AppiumLibrary
-
 *** Variables ***
 ${TXT_ALERT_CONFIRM}      ALERTA CONFIRM
 ${TXT_ALERT_RESTRITIVO}      ALERTA RESTRITIVO

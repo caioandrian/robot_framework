@@ -1,6 +1,4 @@
 *** Settings ***
-Library     SeleniumLibrary     run_on_failure=Nothing
-Library     OperatingSystem
 Documentation   Exemplo página de extratos
 
 *** Variables ***

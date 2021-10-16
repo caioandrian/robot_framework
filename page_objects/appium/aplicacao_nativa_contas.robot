@@ -1,6 +1,3 @@
-*** Settings ***
-Library  AppiumLibrary
-
 *** Variables ***
 ${INPUT_APLICACAO_LOGIN}      //*[@text='Nome']
 ${INPUT_APLICACAO_SENHA}     //*[@text='Senha']

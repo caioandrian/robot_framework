@@ -1,6 +1,3 @@
-*** Settings ***
-Library  AppiumLibrary
-
 *** Variables ***
 ${CONTEUDO_FIXO}        Esta é a descrição da
 

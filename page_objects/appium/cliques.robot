@@ -1,6 +1,3 @@
-*** Settings ***
-Library  AppiumLibrary
-
 *** Variables ***
 ${BTN_CLIQUE_LONGO}      //*[@text = 'Clique Longo']
 ${BTN_CLIQUE_DUPLO}     //*[@text = 'Clique duplo']

@@ -1,6 +1,4 @@
 *** Settings ***
-Library     SeleniumLibrary     run_on_failure=Nothing
-Library     OperatingSystem
 Documentation   Exemplo página de movimentação / transação
 
 *** Variables ***
@@ -10,8 +8,6 @@ ${INPUT_MOV_INTERESSADO}       //*[@data-test="envolvido"]
 ${SELECT_MOV_CONTA}       //*[@data-test="conta"]
 ${BTN_STATUS}       //*[@data-test="status"]
 ${BTN_SALVAR_MOVIMENTACAO}       class=btn-primary
-
-#valores
 ${MENSAGEM_SUCESSO_MOVIMENTACAO_CADASTRADA}        Movimentação inserida com sucesso!
 ${MENSAGEM_SUCESSO_MOVIMENTACAO_ALTERADA}        Movimentação alterada com sucesso!
 

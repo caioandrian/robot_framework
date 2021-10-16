@@ -1,6 +1,3 @@
-*** Settings ***
-Library  AppiumLibrary
-
 *** Variables ***
 ${BTN_DIREITA}     xpath=//*[@text = '›']
 ${BTN_ESQUERDA}    xpath=//*[@text = '‹']

@@ -1,58 +1,1584 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211015 15:26:09.791" rpa="false" schemaversion="2">
-<suite id="s1" name="Contas" source="C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\teste_selenium\contas.robot">
-<kw name="Abrir navegador na página de exemplo" library="login" type="SETUP">
+<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211016 14:27:03.644" rpa="false" schemaversion="2">
+<suite id="s1" name="Movimentacoes" source="C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\teste_selenium\movimentacoes.robot">
+<kw name="Abrir navegador na página de exemplo" library="base" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${URL_PAGINA}</arg>
 <arg>${NAVEGADOR_CHROME}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20211015 15:26:09.963" level="INFO">Opening browser 'chrome' to base url 'https://barrigareact.wcaquino.me/'.</msg>
-<status status="FAIL" starttime="20211015 15:26:09.962" endtime="20211015 15:26:11.010"/>
+<msg timestamp="20211016 14:27:03.990" level="INFO">Opening browser 'chrome' to base url 'https://barrigareact.wcaquino.me/'.</msg>
+<status status="PASS" starttime="20211016 14:27:03.990" endtime="20211016 14:27:07.088"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="NOT RUN" starttime="20211015 15:26:11.010" endtime="20211015 15:26:11.010"/>
+<status status="PASS" starttime="20211016 14:27:07.088" endtime="20211016 14:27:07.217"/>
 </kw>
 <kw name="Remove Files" library="OperatingSystem">
 <arg>${PATH_SCREENSHOTS}/*.png</arg>
 <doc>Uses `Remove File` to remove multiple files one-by-one.</doc>
-<status status="NOT RUN" starttime="20211015 15:26:11.010" endtime="20211015 15:26:11.011"/>
+<msg timestamp="20211016 14:27:07.218" level="INFO" html="true">File '&lt;a href="file://C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\selenium\screenshots\*.png"&gt;C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\selenium\screenshots\*.png&lt;/a&gt;' does not exist.</msg>
+<status status="PASS" starttime="20211016 14:27:07.217" endtime="20211016 14:27:07.218"/>
 </kw>
 <kw name="Set Screenshot Directory" library="SeleniumLibrary">
 <arg>${PATH_SCREENSHOTS}</arg>
 <doc>Sets the directory for captured screenshots.</doc>
-<status status="NOT RUN" starttime="20211015 15:26:11.011" endtime="20211015 15:26:11.011"/>
+<status status="PASS" starttime="20211016 14:27:07.218" endtime="20211016 14:27:07.218"/>
 </kw>
-<status status="FAIL" starttime="20211015 15:26:09.962" endtime="20211015 15:26:11.011"/>
+<kw name="Set Screenshot Directory" library="ScreenCapLibrary">
+<arg>${PATH_VIDEOS}</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="PASS" starttime="20211016 14:27:07.218" endtime="20211016 14:27:07.219"/>
 </kw>
-<test id="s1-t1" name="Criar uma conta com nome válido">
-<tag>robot:exit</tag>
-<status status="FAIL" starttime="20211015 15:26:11.011" endtime="20211015 15:26:11.012">Test execution stopped due to a fatal error.</status>
+<kw name="Start Gif Recording" library="ScreenCapLibrary">
+<arg>embed_width=1200px</arg>
+<arg>size_percentage=1</arg>
+<doc>Starts the recording of a GIF in the background with the specified ``name``.
+The recording can be stopped by calling the `Stop Gif Recording` keyword.</doc>
+<status status="PASS" starttime="20211016 14:27:07.219" endtime="20211016 14:27:07.221"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:03.990" endtime="20211016 14:27:07.221"/>
+</kw>
+<test id="s1-t1" name="Criar nova transação">
+<kw name="Fazer login no sistema e resetar banco de dados" library="login" type="SETUP">
+<kw name="Informar usuário e senha" library="login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:07.222" level="INFO">Typing text 'caio@caio' into text field '//*[@data-test="email"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:07.222" endtime="20211016 14:27:07.291"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:07.291" level="INFO">Typing text '123' into text field '//*[@data-test="passwd"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:07.291" endtime="20211016 14:27:07.357"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:07.222" endtime="20211016 14:27:07.357"/>
+</kw>
+<kw name="Fazer login" library="login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:07.358" level="INFO">Clicking element 'class=btn'.</msg>
+<status status="PASS" starttime="20211016 14:27:07.357" endtime="20211016 14:27:07.398"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:07.357" endtime="20211016 14:27:07.398"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de cliente logado com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:07.410" level="FAIL">Element with locator 'class=toast-message' not found.</msg>
+<status status="FAIL" starttime="20211016 14:27:07.399" endtime="20211016 14:27:07.410"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:07.410" endtime="20211016 14:27:07.410"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:07.410" endtime="20211016 14:27:07.410"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:07.399" endtime="20211016 14:27:07.411"/>
+</kw>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:07.626" level="FAIL">Element with locator 'class=toast-message' not found.</msg>
+<status status="FAIL" starttime="20211016 14:27:07.619" endtime="20211016 14:27:07.626"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:07.626" endtime="20211016 14:27:07.626"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:07.626" endtime="20211016 14:27:07.626"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:07.619" endtime="20211016 14:27:07.627"/>
+</kw>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:07.844" level="FAIL">Element with locator 'class=toast-message' not found.</msg>
+<status status="FAIL" starttime="20211016 14:27:07.838" endtime="20211016 14:27:07.845"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:07.845" endtime="20211016 14:27:07.845"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:07.845" endtime="20211016 14:27:07.845"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:07.838" endtime="20211016 14:27:07.845"/>
+</kw>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:08.074" level="FAIL">Element with locator 'class=toast-message' not found.</msg>
+<status status="FAIL" starttime="20211016 14:27:08.058" endtime="20211016 14:27:08.074"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:08.074" endtime="20211016 14:27:08.074"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:08.074" endtime="20211016 14:27:08.074"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:08.058" endtime="20211016 14:27:08.075"/>
+</kw>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:08.282" level="FAIL">Element with locator 'class=toast-message' not found.</msg>
+<status status="FAIL" starttime="20211016 14:27:08.276" endtime="20211016 14:27:08.283"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:08.283" endtime="20211016 14:27:08.283"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:08.283" endtime="20211016 14:27:08.283"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:08.276" endtime="20211016 14:27:08.283"/>
+</kw>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:08.503" level="FAIL">Element with locator 'class=toast-message' not found.</msg>
+<status status="FAIL" starttime="20211016 14:27:08.496" endtime="20211016 14:27:08.503"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:08.503" endtime="20211016 14:27:08.503"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:08.503" endtime="20211016 14:27:08.503"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:08.496" endtime="20211016 14:27:08.503"/>
+</kw>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:08.755" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:08.717" endtime="20211016 14:27:08.755"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:08.773" level="INFO">Element 'class=toast-message' contains text 'Bem vindo'.</msg>
+<status status="PASS" starttime="20211016 14:27:08.755" endtime="20211016 14:27:08.773"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:08.774" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:08.774" endtime="20211016 14:27:08.807"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:08.716" endtime="20211016 14:27:08.807"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:07.398" endtime="20211016 14:27:08.807"/>
+</kw>
+<kw name="Resetar banco de dados" library="base">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:08.807" endtime="20211016 14:27:08.824"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:08.824" level="INFO">Clicking element '//*[@data-test="menu-settings"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:08.824" endtime="20211016 14:27:08.857"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${RESETAR}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:08.857" endtime="20211016 14:27:08.880"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${RESETAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:08.880" level="INFO">Clicking element '//*[@href="/reset"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:08.880" endtime="20211016 14:27:08.915"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:08.807" endtime="20211016 14:27:08.915"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de banco de dados resetado com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de banco de dados resetado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:08.936" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:08.916" endtime="20211016 14:27:08.937"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_BANCO_RESETADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:08.949" level="FAIL">Element 'class=toast-message' should have contained text 'Dados resetados com sucesso!' but its text was 'Bem vindo, Caio!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:08.937" endtime="20211016 14:27:08.949"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:08.949" endtime="20211016 14:27:08.949"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:08.916" endtime="20211016 14:27:08.949"/>
+</kw>
+<kw name="Valida mensagem de banco de dados resetado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:09.176" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:09.164" endtime="20211016 14:27:09.176"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_BANCO_RESETADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:09.188" level="FAIL">Element 'class=toast-message' should have contained text 'Dados resetados com sucesso!' but its text was 'Bem vindo, Caio!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:09.176" endtime="20211016 14:27:09.188"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:09.189" endtime="20211016 14:27:09.189"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:09.163" endtime="20211016 14:27:09.189"/>
+</kw>
+<kw name="Valida mensagem de banco de dados resetado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:09.408" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:09.397" endtime="20211016 14:27:09.408"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_BANCO_RESETADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:09.421" level="INFO">Element 'class=toast-message' contains text 'Dados resetados com sucesso!'.</msg>
+<status status="PASS" starttime="20211016 14:27:09.408" endtime="20211016 14:27:09.421"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:09.421" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:09.421" endtime="20211016 14:27:09.450"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:09.395" endtime="20211016 14:27:09.450"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:08.916" endtime="20211016 14:27:09.450"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:07.222" endtime="20211016 14:27:09.450"/>
+</kw>
+<kw name="Acessar página de contas" library="base">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:09.451" endtime="20211016 14:27:09.473"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:09.474" level="INFO">Clicking element '//*[@data-test="menu-settings"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:09.473" endtime="20211016 14:27:09.504"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${CONTAS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:09.504" endtime="20211016 14:27:09.526"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${CONTAS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:09.526" level="INFO">Clicking element '//*[@href="/contas"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:09.526" endtime="20211016 14:27:09.569"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:09.451" endtime="20211016 14:27:09.569"/>
+</kw>
+<kw name="Adicionar conta" library="contas">
+<arg>Carteira</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_NOME_CONTA}</arg>
+<arg>${nome_conta}</arg>
+<arg>clear=True</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:09.570" level="INFO">Typing text 'Carteira' into text field '//*[@data-test="nome"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:09.570" endtime="20211016 14:27:09.626"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_SALVAR_CONTA}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:09.627" level="INFO">Clicking element 'class=btn'.</msg>
+<status status="PASS" starttime="20211016 14:27:09.627" endtime="20211016 14:27:09.664"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:09.570" endtime="20211016 14:27:09.665"/>
+</kw>
+<kw name="Valida mensagem de conta cadastrada com sucesso" library="contas">
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem conta criada com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem conta criada com sucesso" library="contas">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:09.678" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:09.667" endtime="20211016 14:27:09.678"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_CONTA_CRIADA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:09.705" level="FAIL">Element 'class=toast-message' should have contained text 'Conta inserida com sucesso' but its text was 'Dados resetados com sucesso!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:09.678" endtime="20211016 14:27:09.705"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:09.705" endtime="20211016 14:27:09.706"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:09.667" endtime="20211016 14:27:09.706"/>
+</kw>
+<kw name="Valida mensagem conta criada com sucesso" library="contas">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:09.921" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:09.909" endtime="20211016 14:27:09.921"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_CONTA_CRIADA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:09.938" level="FAIL">Element 'class=toast-message' should have contained text 'Conta inserida com sucesso' but its text was 'Dados resetados com sucesso!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:09.921" endtime="20211016 14:27:09.938"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:09.938" endtime="20211016 14:27:09.939"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:09.908" endtime="20211016 14:27:09.939"/>
+</kw>
+<kw name="Valida mensagem conta criada com sucesso" library="contas">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:10.156" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:10.141" endtime="20211016 14:27:10.156"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_CONTA_CRIADA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:10.169" level="INFO">Element 'class=toast-message' contains text 'Conta inserida com sucesso'.</msg>
+<status status="PASS" starttime="20211016 14:27:10.156" endtime="20211016 14:27:10.169"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:10.170" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:10.170" endtime="20211016 14:27:10.219"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:10.141" endtime="20211016 14:27:10.219"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:09.667" endtime="20211016 14:27:10.220"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:09.666" endtime="20211016 14:27:10.220"/>
+</kw>
+<kw name="Acessar página de movimentacao" library="base">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:10.222" endtime="20211016 14:27:10.252"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:10.253" level="INFO">Clicking element '//*[@data-test="menu-settings"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:10.252" endtime="20211016 14:27:10.282"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${MOVIMENTACAO}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:10.282" endtime="20211016 14:27:10.302"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${MOVIMENTACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:10.303" level="INFO">Clicking element '//*[@data-test="menu-movimentacao"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:10.302" endtime="20211016 14:27:10.346"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:10.221" endtime="20211016 14:27:10.347"/>
+</kw>
+<kw name="Adicionar movimentacao" library="movimentacoes">
+<arg>Transação de Exemplo</arg>
+<arg>900.50</arg>
+<arg>Qualquer Pessoa</arg>
+<arg>Carteira</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_MOV_DESCRICAO}</arg>
+<arg>${descricao}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:10.349" level="INFO">Typing text 'Transação de Exemplo' into text field 'id=descricao'.</msg>
+<status status="PASS" starttime="20211016 14:27:10.348" endtime="20211016 14:27:10.457"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_MOV_VALOR}</arg>
+<arg>${valor}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:10.458" level="INFO">Typing text '900.50' into text field '//*[@data-test="valor"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:10.457" endtime="20211016 14:27:10.520"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_MOV_INTERESSADO}</arg>
+<arg>${interessado}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:10.521" level="INFO">Typing text 'Qualquer Pessoa' into text field '//*[@data-test="envolvido"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:10.521" endtime="20211016 14:27:10.605"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>${SELECT_MOV_CONTA}</arg>
+<arg>${nome_conta}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20211016 14:27:10.605" level="INFO">Selecting options from selection list '//*[@data-test="conta"]' by label Carteira.</msg>
+<status status="PASS" starttime="20211016 14:27:10.605" endtime="20211016 14:27:10.665"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_SALVAR_MOVIMENTACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:10.665" level="INFO">Clicking element 'class=btn-primary'.</msg>
+<status status="PASS" starttime="20211016 14:27:10.665" endtime="20211016 14:27:10.694"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de movimentação cadastrada com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de movimentação cadastrada com sucesso" library="movimentacoes">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:10.706" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:10.694" endtime="20211016 14:27:10.706"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_MOVIMENTACAO_CADASTRADA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:10.716" level="FAIL">Element 'class=toast-message' should have contained text 'Movimentação inserida com sucesso!' but its text was 'Conta inserida com sucesso!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:10.706" endtime="20211016 14:27:10.716"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:10.716" endtime="20211016 14:27:10.716"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:10.694" endtime="20211016 14:27:10.716"/>
+</kw>
+<kw name="Valida mensagem de movimentação cadastrada com sucesso" library="movimentacoes">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:10.943" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:10.932" endtime="20211016 14:27:10.943"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_MOVIMENTACAO_CADASTRADA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:10.952" level="FAIL">Element 'class=toast-message' should have contained text 'Movimentação inserida com sucesso!' but its text was 'Conta inserida com sucesso!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:10.943" endtime="20211016 14:27:10.952"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:10.952" endtime="20211016 14:27:10.952"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:10.932" endtime="20211016 14:27:10.952"/>
+</kw>
+<kw name="Valida mensagem de movimentação cadastrada com sucesso" library="movimentacoes">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:11.179" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:11.166" endtime="20211016 14:27:11.180"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_MOVIMENTACAO_CADASTRADA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:11.196" level="INFO">Element 'class=toast-message' contains text 'Movimentação inserida com sucesso!'.</msg>
+<status status="PASS" starttime="20211016 14:27:11.180" endtime="20211016 14:27:11.196"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:11.197" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:11.196" endtime="20211016 14:27:11.230"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:11.165" endtime="20211016 14:27:11.230"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:10.694" endtime="20211016 14:27:11.230"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:10.348" endtime="20211016 14:27:11.230"/>
+</kw>
+<kw name="Valida se a movimentação aparece na página" library="extratos">
+<arg>Transação de Exemplo</arg>
+<arg>900,50</arg>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<arg>${descricao}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" starttime="20211016 14:27:11.232" endtime="20211016 14:27:11.673"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>${descricao}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20211016 14:27:11.687" level="INFO">Current page contains text 'Transação de Exemplo'.</msg>
+<status status="PASS" starttime="20211016 14:27:11.673" endtime="20211016 14:27:11.687"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//span[text()='${descricao}']//following-sibling::small[contains(., '${valor}')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:11.709" level="INFO">Element 'xpath=//span[text()='Transação de Exemplo']//following-sibling::small[contains(., '900,50')]' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:11.687" endtime="20211016 14:27:11.709"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:11.232" endtime="20211016 14:27:11.709"/>
+</kw>
+<kw name="Fazer logout do sistema" library="base" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Print da tela com erro</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20211016 14:27:11.711" endtime="20211016 14:27:11.711"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:11.711" endtime="20211016 14:27:11.723"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:11.723" level="INFO">Clicking element '//*[@data-test="menu-settings"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:11.723" endtime="20211016 14:27:11.741"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SAIR}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:11.742" endtime="20211016 14:27:11.757"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SAIR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:11.757" level="INFO">Clicking element '//*[@href="/logout"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:11.757" endtime="20211016 14:27:11.801"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de deslogado com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de deslogado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:11.827" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:11.802" endtime="20211016 14:27:11.827"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_DESLOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:11.847" level="INFO">Element 'class=toast-message' contains text 'Até Logo!'.</msg>
+<status status="PASS" starttime="20211016 14:27:11.827" endtime="20211016 14:27:11.848"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:11.849" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:11.848" endtime="20211016 14:27:11.892"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:11.802" endtime="20211016 14:27:11.892"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:11.801" endtime="20211016 14:27:11.892"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:11.710" endtime="20211016 14:27:11.892"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:07.221" endtime="20211016 14:27:11.892"/>
 </test>
-<test id="s1-t2" name="Criar uma conta com nome que já existe">
-<tag>robot:exit</tag>
-<status status="FAIL" starttime="20211015 15:26:11.014" endtime="20211015 15:26:13.127">Test execution stopped due to a fatal error.</status>
+<test id="s1-t2" name="Editar transação">
+<kw name="Fazer login no sistema e resetar banco de dados" library="login" type="SETUP">
+<kw name="Informar usuário e senha" library="login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:11.895" level="INFO">Typing text 'caio@caio' into text field '//*[@data-test="email"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:11.895" endtime="20211016 14:27:11.949"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:11.949" level="INFO">Typing text '123' into text field '//*[@data-test="passwd"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:11.949" endtime="20211016 14:27:11.993"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:11.895" endtime="20211016 14:27:11.994"/>
+</kw>
+<kw name="Fazer login" library="login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:11.994" level="INFO">Clicking element 'class=btn'.</msg>
+<status status="PASS" starttime="20211016 14:27:11.994" endtime="20211016 14:27:12.032"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:11.994" endtime="20211016 14:27:12.032"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de cliente logado com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:12.055" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:12.033" endtime="20211016 14:27:12.055"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:12.068" level="FAIL">Element 'class=toast-message' should have contained text 'Bem vindo' but its text was 'Até Logo!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:12.055" endtime="20211016 14:27:12.068"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:12.068" endtime="20211016 14:27:12.068"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:12.033" endtime="20211016 14:27:12.069"/>
+</kw>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:12.288" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:12.273" endtime="20211016 14:27:12.288"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:12.300" level="FAIL">Element 'class=toast-message' should have contained text 'Bem vindo' but its text was 'Até Logo!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:12.288" endtime="20211016 14:27:12.300"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:12.301" endtime="20211016 14:27:12.301"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:12.273" endtime="20211016 14:27:12.301"/>
+</kw>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:12.524" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:12.505" endtime="20211016 14:27:12.524"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:12.540" level="INFO">Element 'class=toast-message' contains text 'Bem vindo'.</msg>
+<status status="PASS" starttime="20211016 14:27:12.524" endtime="20211016 14:27:12.540"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:12.541" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:12.540" endtime="20211016 14:27:12.571"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:12.505" endtime="20211016 14:27:12.571"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:12.032" endtime="20211016 14:27:12.571"/>
+</kw>
+<kw name="Resetar banco de dados" library="base">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:12.572" endtime="20211016 14:27:12.583"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:12.584" level="INFO">Clicking element '//*[@data-test="menu-settings"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:12.583" endtime="20211016 14:27:12.611"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${RESETAR}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:12.611" endtime="20211016 14:27:12.627"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${RESETAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:12.627" level="INFO">Clicking element '//*[@href="/reset"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:12.627" endtime="20211016 14:27:12.691"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:12.572" endtime="20211016 14:27:12.691"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de banco de dados resetado com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de banco de dados resetado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:12.709" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:12.691" endtime="20211016 14:27:12.709"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_BANCO_RESETADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:12.720" level="FAIL">Element 'class=toast-message' should have contained text 'Dados resetados com sucesso!' but its text was 'Bem vindo, Caio!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:12.709" endtime="20211016 14:27:12.720"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:12.720" endtime="20211016 14:27:12.720"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:12.691" endtime="20211016 14:27:12.721"/>
+</kw>
+<kw name="Valida mensagem de banco de dados resetado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:12.941" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:12.925" endtime="20211016 14:27:12.941"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_BANCO_RESETADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:12.955" level="INFO">Element 'class=toast-message' contains text 'Dados resetados com sucesso!'.</msg>
+<status status="PASS" starttime="20211016 14:27:12.941" endtime="20211016 14:27:12.955"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:12.955" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:12.955" endtime="20211016 14:27:12.994"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:12.925" endtime="20211016 14:27:12.995"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:12.691" endtime="20211016 14:27:12.995"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:11.895" endtime="20211016 14:27:12.995"/>
+</kw>
+<kw name="Acessar página de extratos" library="base">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:12.997" endtime="20211016 14:27:13.017"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:13.017" level="INFO">Clicking element '//*[@data-test="menu-settings"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:13.017" endtime="20211016 14:27:13.036"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${EXTRATO}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:13.036" endtime="20211016 14:27:13.050"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${EXTRATO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:13.050" level="INFO">Clicking element '//*[@data-test="menu-extrato"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:13.050" endtime="20211016 14:27:13.078"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:12.997" endtime="20211016 14:27:13.078"/>
+</kw>
+<kw name="Selecionar transação pela descrição" library="extratos">
+<arg>Movimentacao 1, calculo saldo</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211016 14:27:18.089" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211016 14:27:13.081" endtime="20211016 14:27:18.090"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//span[text()="${descricao}"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:18.111" level="INFO">Element 'xpath=//span[text()="Movimentacao 1, calculo saldo"]' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:18.090" endtime="20211016 14:27:18.111"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//span[text()="${descricao}"]${ICONE_EDITAR_MOV}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:18.111" level="INFO">Clicking element 'xpath=//span[text()="Movimentacao 1, calculo saldo"]/../../..//i[@class='fas fa-edit']'.</msg>
+<status status="PASS" starttime="20211016 14:27:18.111" endtime="20211016 14:27:18.157"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:13.079" endtime="20211016 14:27:18.158"/>
+</kw>
+<kw name="Editar movimentação" library="movimentacoes">
+<arg>Movimentacao 1, calculo saldo</arg>
+<arg>conta para saldo</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211016 14:27:28.168" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20211016 14:27:18.159" endtime="20211016 14:27:28.168"/>
+</kw>
+<kw name="Element Attribute Value Should Be" library="SeleniumLibrary">
+<arg>${INPUT_MOV_DESCRICAO}</arg>
+<arg>value</arg>
+<arg>${descricao}</arg>
+<doc>Verifies element identified by ``locator`` contains expected attribute value.</doc>
+<msg timestamp="20211016 14:27:28.183" level="INFO">Element 'id=descricao' attribute 'value' contains value 'Movimentacao 1, calculo saldo'.</msg>
+<status status="PASS" starttime="20211016 14:27:28.168" endtime="20211016 14:27:28.183"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_STATUS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:28.184" level="INFO">Clicking element '//*[@data-test="status"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:28.183" endtime="20211016 14:27:28.217"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${BTN_STATUS}\[contains(@class, "btn-success")]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20211016 14:27:28.217" endtime="20211016 14:27:28.231"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_SALVAR_MOVIMENTACAO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:28.232" level="INFO">Clicking element 'class=btn-primary'.</msg>
+<status status="PASS" starttime="20211016 14:27:28.231" endtime="20211016 14:27:28.276"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de movimentação alterada com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de movimentação alterada com sucesso" library="movimentacoes">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:28.287" level="FAIL">Element with locator 'class=toast-message' not found.</msg>
+<status status="FAIL" starttime="20211016 14:27:28.277" endtime="20211016 14:27:28.287"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_MOVIMENTACAO_ALTERADA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:28.287" endtime="20211016 14:27:28.287"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:28.288" endtime="20211016 14:27:28.288"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:28.277" endtime="20211016 14:27:28.288"/>
+</kw>
+<kw name="Valida mensagem de movimentação alterada com sucesso" library="movimentacoes">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:28.504" level="FAIL">Element with locator 'class=toast-message' not found.</msg>
+<status status="FAIL" starttime="20211016 14:27:28.496" endtime="20211016 14:27:28.504"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_MOVIMENTACAO_ALTERADA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:28.504" endtime="20211016 14:27:28.504"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:28.504" endtime="20211016 14:27:28.505"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:28.496" endtime="20211016 14:27:28.505"/>
+</kw>
+<kw name="Valida mensagem de movimentação alterada com sucesso" library="movimentacoes">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:28.742" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:28.723" endtime="20211016 14:27:28.743"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_MOVIMENTACAO_ALTERADA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:28.767" level="INFO">Element 'class=toast-message' contains text 'Movimentação alterada com sucesso!'.</msg>
+<status status="PASS" starttime="20211016 14:27:28.743" endtime="20211016 14:27:28.767"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:28.768" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:28.767" endtime="20211016 14:27:28.801"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:28.723" endtime="20211016 14:27:28.801"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:28.277" endtime="20211016 14:27:28.801"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:18.159" endtime="20211016 14:27:28.801"/>
+</kw>
+<kw name="Acessar página home" library="base">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:28.802" endtime="20211016 14:27:28.818"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:28.818" level="INFO">Clicking element '//*[@data-test="menu-settings"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:28.818" endtime="20211016 14:27:28.837"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${HOME}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:28.838" endtime="20211016 14:27:28.852"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HOME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:28.852" level="INFO">Clicking element '//*[@data-test="menu-home"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:28.852" endtime="20211016 14:27:28.886"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:28.802" endtime="20211016 14:27:28.887"/>
+</kw>
+<kw name="Valida saldo da conta" library="contas">
+<arg>Conta para saldo</arg>
+<arg>R$ 4.034,00</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211016 14:27:33.899" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211016 14:27:28.888" endtime="20211016 14:27:33.899"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//td[text()="${nome_conta}"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:33.922" level="INFO">Element 'xpath=//td[text()="Conta para saldo"]' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:33.899" endtime="20211016 14:27:33.922"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath=//td[text()="${nome_conta}"]/../td[2]</arg>
+<arg>${valor}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:33.943" level="INFO">Element 'xpath=//td[text()="Conta para saldo"]/../td[2]' contains text 'R$ 4.034,00'.</msg>
+<status status="PASS" starttime="20211016 14:27:33.923" endtime="20211016 14:27:33.943"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:28.887" endtime="20211016 14:27:33.943"/>
+</kw>
+<kw name="Fazer logout do sistema" library="base" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Print da tela com erro</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20211016 14:27:33.944" endtime="20211016 14:27:33.945"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:33.945" endtime="20211016 14:27:33.965"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:33.966" level="INFO">Clicking element '//*[@data-test="menu-settings"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:33.965" endtime="20211016 14:27:33.996"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SAIR}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:33.996" endtime="20211016 14:27:34.016"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SAIR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:34.016" level="INFO">Clicking element '//*[@href="/logout"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:34.016" endtime="20211016 14:27:34.048"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de deslogado com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de deslogado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:34.066" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:34.049" endtime="20211016 14:27:34.066"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_DESLOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:34.079" level="INFO">Element 'class=toast-message' contains text 'Até Logo!'.</msg>
+<status status="PASS" starttime="20211016 14:27:34.066" endtime="20211016 14:27:34.079"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:34.080" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:34.079" endtime="20211016 14:27:34.110"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:34.049" endtime="20211016 14:27:34.110"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:34.048" endtime="20211016 14:27:34.110"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:33.944" endtime="20211016 14:27:34.110"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:11.894" endtime="20211016 14:27:34.111"/>
+</test>
+<test id="s1-t3" name="Excluir transação">
+<kw name="Fazer login no sistema e resetar banco de dados" library="login" type="SETUP">
+<kw name="Informar usuário e senha" library="login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_EMAIL}</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:34.113" level="INFO">Typing text 'caio@caio' into text field '//*[@data-test="email"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:34.113" endtime="20211016 14:27:34.187"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${INPUT_SENHA}</arg>
+<arg>${SENHA}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:34.187" level="INFO">Typing text '123' into text field '//*[@data-test="passwd"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:34.187" endtime="20211016 14:27:34.251"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:34.113" endtime="20211016 14:27:34.251"/>
+</kw>
+<kw name="Fazer login" library="login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:34.252" level="INFO">Clicking element 'class=btn'.</msg>
+<status status="PASS" starttime="20211016 14:27:34.251" endtime="20211016 14:27:34.289"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:34.251" endtime="20211016 14:27:34.289"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de cliente logado com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:34.300" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:34.290" endtime="20211016 14:27:34.301"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:34.321" level="FAIL">Element 'class=toast-message' should have contained text 'Bem vindo' but its text was 'Até Logo!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:34.301" endtime="20211016 14:27:34.321"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:34.321" endtime="20211016 14:27:34.321"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:34.289" endtime="20211016 14:27:34.322"/>
+</kw>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:34.541" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:34.526" endtime="20211016 14:27:34.541"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:34.555" level="FAIL">Element 'class=toast-message' should have contained text 'Bem vindo' but its text was 'Até Logo!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:34.541" endtime="20211016 14:27:34.555"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:34.555" endtime="20211016 14:27:34.555"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:34.526" endtime="20211016 14:27:34.555"/>
+</kw>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:34.780" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:34.763" endtime="20211016 14:27:34.780"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:34.792" level="FAIL">Element 'class=toast-message' should have contained text 'Bem vindo' but its text was 'Até Logo!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:34.780" endtime="20211016 14:27:34.792"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:34.792" endtime="20211016 14:27:34.792"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:34.762" endtime="20211016 14:27:34.793"/>
+</kw>
+<kw name="Valida mensagem de cliente logado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:35.021" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:34.998" endtime="20211016 14:27:35.021"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_LOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:35.042" level="INFO">Element 'class=toast-message' contains text 'Bem vindo'.</msg>
+<status status="PASS" starttime="20211016 14:27:35.021" endtime="20211016 14:27:35.042"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:35.042" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:35.042" endtime="20211016 14:27:35.069"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:34.998" endtime="20211016 14:27:35.069"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:34.289" endtime="20211016 14:27:35.069"/>
+</kw>
+<kw name="Resetar banco de dados" library="base">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:35.070" endtime="20211016 14:27:35.082"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:35.082" level="INFO">Clicking element '//*[@data-test="menu-settings"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:35.082" endtime="20211016 14:27:35.106"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${RESETAR}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:35.106" endtime="20211016 14:27:35.123"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${RESETAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:35.124" level="INFO">Clicking element '//*[@href="/reset"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:35.123" endtime="20211016 14:27:35.157"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:35.069" endtime="20211016 14:27:35.157"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de banco de dados resetado com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de banco de dados resetado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:35.176" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:35.158" endtime="20211016 14:27:35.176"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_BANCO_RESETADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:35.195" level="FAIL">Element 'class=toast-message' should have contained text 'Dados resetados com sucesso!' but its text was 'Bem vindo, Caio!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:35.176" endtime="20211016 14:27:35.195"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:35.196" endtime="20211016 14:27:35.197"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:35.157" endtime="20211016 14:27:35.198"/>
+</kw>
+<kw name="Valida mensagem de banco de dados resetado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:35.419" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:35.403" endtime="20211016 14:27:35.419"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_BANCO_RESETADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:35.432" level="FAIL">Element 'class=toast-message' should have contained text 'Dados resetados com sucesso!' but its text was 'Bem vindo, Caio!'.</msg>
+<status status="FAIL" starttime="20211016 14:27:35.419" endtime="20211016 14:27:35.432"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:35.433" endtime="20211016 14:27:35.433"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:35.403" endtime="20211016 14:27:35.433"/>
+</kw>
+<kw name="Valida mensagem de banco de dados resetado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:35.660" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:35.639" endtime="20211016 14:27:35.660"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_BANCO_RESETADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:35.674" level="INFO">Element 'class=toast-message' contains text 'Dados resetados com sucesso!'.</msg>
+<status status="PASS" starttime="20211016 14:27:35.660" endtime="20211016 14:27:35.674"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:35.675" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:35.674" endtime="20211016 14:27:35.714"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:35.639" endtime="20211016 14:27:35.715"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:35.157" endtime="20211016 14:27:35.715"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:34.112" endtime="20211016 14:27:35.715"/>
+</kw>
+<kw name="Acessar página de extratos" library="base">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:35.716" endtime="20211016 14:27:35.730"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:35.732" level="INFO">Clicking element '//*[@data-test="menu-settings"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:35.731" endtime="20211016 14:27:35.764"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${EXTRATO}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:35.764" endtime="20211016 14:27:35.785"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${EXTRATO}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:35.785" level="INFO">Clicking element '//*[@data-test="menu-extrato"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:35.785" endtime="20211016 14:27:35.821"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:35.716" endtime="20211016 14:27:35.821"/>
+</kw>
+<kw name="Excluir transação pela descrição" library="extratos">
+<arg>Movimentacao para exclusao</arg>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20211016 14:27:40.823" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20211016 14:27:35.822" endtime="20211016 14:27:40.823"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>xpath=//span[text()="${descricao}"]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:40.842" level="INFO">Element 'xpath=//span[text()="Movimentacao para exclusao"]' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:40.823" endtime="20211016 14:27:40.842"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//span[text()="${descricao}"]${ICONE_LIXEIRA_MOV}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:40.843" level="INFO">Clicking element 'xpath=//span[text()="Movimentacao para exclusao"]/../../..//i[@class='far fa-trash-alt']'.</msg>
+<status status="PASS" starttime="20211016 14:27:40.843" endtime="20211016 14:27:40.871"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de movimentação removida com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de movimentação removida com sucesso" library="extratos">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:40.881" level="FAIL">Element with locator 'class=toast-message' not found.</msg>
+<status status="FAIL" starttime="20211016 14:27:40.871" endtime="20211016 14:27:40.881"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_TRANSACAO_EXCLUIDA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:40.882" endtime="20211016 14:27:40.882"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:40.883" endtime="20211016 14:27:40.883"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:40.871" endtime="20211016 14:27:40.884"/>
+</kw>
+<kw name="Valida mensagem de movimentação removida com sucesso" library="extratos">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:41.099" level="FAIL">Element with locator 'class=toast-message' not found.</msg>
+<status status="FAIL" starttime="20211016 14:27:41.089" endtime="20211016 14:27:41.099"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_TRANSACAO_EXCLUIDA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:41.100" endtime="20211016 14:27:41.100"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20211016 14:27:41.100" endtime="20211016 14:27:41.100"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:41.089" endtime="20211016 14:27:41.102"/>
+</kw>
+<kw name="Valida mensagem de movimentação removida com sucesso" library="extratos">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>20s</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:41.325" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:41.309" endtime="20211016 14:27:41.325"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_SUCESSO_TRANSACAO_EXCLUIDA}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:41.342" level="INFO">Element 'class=toast-message' contains text 'Movimentação removida com sucesso!'.</msg>
+<status status="PASS" starttime="20211016 14:27:41.325" endtime="20211016 14:27:41.342"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:41.342" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:41.342" endtime="20211016 14:27:41.370"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:41.309" endtime="20211016 14:27:41.370"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:40.871" endtime="20211016 14:27:41.370"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:35.822" endtime="20211016 14:27:41.370"/>
+</kw>
+<kw name="Valida a quantidade de transacoes na página" library="extratos">
+<arg>6</arg>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${count}</var>
+<arg>${LINHAS_MOVIMENTACOES}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20211016 14:27:41.386" level="INFO">${count} = 6</msg>
+<status status="PASS" starttime="20211016 14:27:41.371" endtime="20211016 14:27:41.386"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${count} == ${qtde}</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20211016 14:27:41.386" endtime="20211016 14:27:41.388"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:41.370" endtime="20211016 14:27:41.389"/>
+</kw>
+<kw name="Fazer logout do sistema" library="base" type="TEARDOWN">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<arg>Print da tela com erro</arg>
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<status status="PASS" starttime="20211016 14:27:41.392" endtime="20211016 14:27:41.392"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:41.392" endtime="20211016 14:27:41.410"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SETTINGS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:41.411" level="INFO">Clicking element '//*[@data-test="menu-settings"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:41.410" endtime="20211016 14:27:41.439"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SAIR}</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20211016 14:27:41.439" endtime="20211016 14:27:41.455"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${SAIR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:41.455" level="INFO">Clicking element '//*[@href="/logout"]'.</msg>
+<status status="PASS" starttime="20211016 14:27:41.455" endtime="20211016 14:27:41.493"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>20s</arg>
+<arg>200ms</arg>
+<arg>Valida mensagem de deslogado com sucesso</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Valida mensagem de deslogado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:41.510" level="FAIL">The element 'class=toast-message' should be visible, but it is not.</msg>
+<status status="FAIL" starttime="20211016 14:27:41.495" endtime="20211016 14:27:41.510"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_DESLOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:41.528" level="INFO">Element 'class=toast-message' contains text 'Até Logo!'.</msg>
+<status status="PASS" starttime="20211016 14:27:41.510" endtime="20211016 14:27:41.528"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:41.529" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:41.528" endtime="20211016 14:27:41.561"/>
+</kw>
+<status status="FAIL" starttime="20211016 14:27:41.494" endtime="20211016 14:27:41.561"/>
+</kw>
+<kw name="Valida mensagem de deslogado com sucesso" library="base">
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20211016 14:27:41.796" level="INFO">Element 'class=toast-message' is displayed.</msg>
+<status status="PASS" starttime="20211016 14:27:41.778" endtime="20211016 14:27:41.796"/>
+</kw>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>${ALERT_MENSAGEM}</arg>
+<arg>${MENSAGEM_DESLOGADO_SUCESSO}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20211016 14:27:41.810" level="INFO">Element 'class=toast-message' contains text 'Até Logo!'.</msg>
+<status status="PASS" starttime="20211016 14:27:41.797" endtime="20211016 14:27:41.810"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${BTN_CLOSE_MENSAGEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20211016 14:27:41.810" level="INFO">Clicking element 'class=toast-close-button'.</msg>
+<status status="PASS" starttime="20211016 14:27:41.810" endtime="20211016 14:27:41.835"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:41.778" endtime="20211016 14:27:41.835"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:41.493" endtime="20211016 14:27:41.835"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:41.392" endtime="20211016 14:27:41.835"/>
+</kw>
+<status status="PASS" starttime="20211016 14:27:34.112" endtime="20211016 14:27:41.836"/>
 </test>
 <kw name="Fechar navegador" library="login" type="TEARDOWN">
+<kw name="Stop Gif Recording" library="ScreenCapLibrary">
+<doc>Stops the GIF recording and generates the file. If ``embed`` argument was set to ``True`` the
+GIF will be displayed in the log file.</doc>
+<msg timestamp="20211016 14:27:41.907" level="INFO" html="true">&lt;a href="videos/screenshot_4.gif"&gt;&lt;img src="videos/screenshot_4.gif" width="1200px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211016 14:27:41.837" endtime="20211016 14:27:47.072"/>
+</kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20211015 15:26:13.128" endtime="20211015 15:26:13.128"/>
+<status status="PASS" starttime="20211016 14:27:47.072" endtime="20211016 14:27:49.215"/>
 </kw>
-<status status="PASS" starttime="20211015 15:26:13.128" endtime="20211015 15:26:13.128"/>
+<status status="PASS" starttime="20211016 14:27:41.837" endtime="20211016 14:27:49.215"/>
 </kw>
-<doc>Testes para validar o cadastrado de novas contas.</doc>
-<status status="FAIL" starttime="20211015 15:26:09.793" endtime="20211015 15:26:13.128">Suite setup failed:
-Execution terminated by signal</status>
+<doc>Testes para validar o CRUD de movimentações</doc>
+<status status="PASS" starttime="20211016 14:27:03.645" endtime="20211016 14:27:49.215"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="2" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="0" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
 </tag>
 <suite>
-<stat pass="0" fail="2" skip="0" id="s1" name="Contas">Contas</stat>
+<stat pass="3" fail="0" skip="0" id="s1" name="Movimentacoes">Movimentacoes</stat>
 </suite>
 </statistics>
 <errors>

@@ -3,7 +3,7 @@ Documentation    Exemplo usando massa de dados
 ...              para validar o login com dados inválidos
 Library     SeleniumLibrary     run_on_failure=Nothing
 Resource    ../page_objects/selenium/login.robot
-Resource    ../page_objects/selenium/head.robot
+Resource    ../page_objects/selenium/base.robot
 Resource    ../page_objects/selenium/contas.robot
 
 Suite Setup         Abrir navegador na página de exemplo

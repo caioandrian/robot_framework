@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation    Testes para validar o cadastrado de novas contas.
 Resource    ../page_objects/selenium/login.robot
-Resource    ../page_objects/selenium/head.robot
+Resource    ../page_objects/selenium/base.robot
 Resource    ../page_objects/selenium/contas.robot
 
 Suite Setup     Abrir navegador na página de exemplo

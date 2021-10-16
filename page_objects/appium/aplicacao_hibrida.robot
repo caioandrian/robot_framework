@@ -1,6 +1,3 @@
-*** Settings ***
-Library     AppiumLibrary
-
 *** Variables ***
 ${CONTEXTO_WEBVIEW}      class=android.webkit.WebView
 

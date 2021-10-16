@@ -1,6 +1,3 @@
-*** Settings ***
-Library  AppiumLibrary
-
 *** Variables ***
 ${CONTEUDO_ABA1}    Este é o conteúdo da Aba 1
 ${CONTEUDO_ABA2}    Este é o conteúdo da Aba 2
