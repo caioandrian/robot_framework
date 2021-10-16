@@ -8,7 +8,9 @@ Test Setup      Run Keywords
 ...             Launch Application      AND
 ...             Valida se a tela principal está visível
 Test Teardown   Quit Application
-Suite Teardown  Close Application
+Suite Teardown  Run Keywords
+...             Stop Gif Recording
+...             Close Application
 
 *** Test Cases ***
 Arrastar um elemento até o outro

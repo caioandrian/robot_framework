@@ -56,7 +56,7 @@ Selecionar nova data
     Wait Until Page Contains       ${TXT_DATA}
     Click Text      ${TXT_DATA}
 
-Selecionar o dia
+Escolher o dia
     [Arguments]     ${dia}
     Wait Until Page Contains Element       ${FRAME_DATA}
     Click Element   xpath=//*[@text='${dia}']

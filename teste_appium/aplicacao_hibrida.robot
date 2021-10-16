@@ -8,9 +8,10 @@ Suite Setup     Open Test Application
 Test Setup      Run Keywords
 ...             Launch Application      AND
 ...             Valida se a tela principal está visível
-Test Teardown   Run Keywords
-...             Quit Application
-Suite Teardown  Close Application
+Test Teardown   Quit Application
+Suite Teardown  Run Keywords
+...             Stop Gif Recording
+...             Close Application
 
 *** Test Cases ***
 Fazer login
