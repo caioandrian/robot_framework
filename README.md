@@ -32,6 +32,18 @@ Conteúdo básico do curso + testes adicionais.
 
 <br/>
 
+### ---- Pré-Requisitos Robot com Desktop Library (Zoomba) ----
+- Sistema Operacional Windows
+- Download da Linguagem Python (https://www.python.org/downloads/)
+- Marcar opção de instalar o PIP durante instalação do Python
+- python --version
+- pip --version
+- Download do Robot Framework via linha de comando no terminal: pip install robotframework
+- robot --version
+- Download do Desktop Library (Zoomba): pip install robotframework-zoomba
+
+<br/>
+
 Na versão 2.1 foi adicionado uma nova Biblioteca chamada **ScreenCapLibrary**. 
 
 Por favor, instale usando o comando via terminal.
@@ -45,7 +57,8 @@ Por favor, instale usando o comando via terminal.
 
 #### **Bibliotecas do Robot**:
 - Selenium Library
-- Appium Library (em breve)
+- Appium Library
+- Desktop Library (Zoomba)
 
 <br/>
 
@@ -67,6 +80,15 @@ Por favor, instale usando o comando via terminal.
 - Obs: Talvez precise atualizar a versão do chromedrive de acordo com a versão do seu navegador no device simulado
 - ~~Drag and Drop, não funcionou~~ :pensive:
 <br/>
+<br/>
+
+### ---- Lista de Testes com Desktop ----
+<br/>
+
+- Operações na calculadora do Windows
+- Escrever no bloco de notas
+<br/>
+<br/>
 
 ### ---- Diferenciais no projeto ----
 <br/>
@@ -75,6 +97,7 @@ Por favor, instale usando o comando via terminal.
 - Robot Framework
 - Selenium Library
 - Appium Library
+- Desktop Library (Zoomba)
 - Massa de Dados / Data Driven
 - Geração de Report
 - Contexto Webview para mobile (aplicação híbrida)
@@ -86,7 +109,7 @@ Por favor, instale usando o comando via terminal.
 **Instalar dependências via node**
 > npm i
 
-**Executar todos testes de exemplo do robot framework**
+**Executar todos os testes de exemplo do robot framework**
 > npm run robot:exemplos
 
 <br/>
@@ -95,10 +118,10 @@ Por favor, instale usando o comando via terminal.
 
 <br/>
 
-**Executar todos testes com selenium webdriver**
+**Executar todos os testes com selenium webdriver**
 > npm run robot:selenium
 
-**Executar todos testes com massa de dados**
+**Executar todos os testes com massa de dados**
 > npm run robot:selenium-login_invalido
 
 <br/>
@@ -111,7 +134,7 @@ Por favor, instale usando o comando via terminal.
 
 <br/>
 
-*Observação: Para executar os testes com appium é preciso antes inicializar o device pelo AVD Manager no Android Studio.*
+*Observação: Para executar os testes com appium é preciso antes <u>inicializar o device pelo AVD Manager</u> no Android Studio.*
 
 <br/>
 
@@ -138,3 +161,26 @@ Por favor, instale usando o comando via terminal.
 
 **Comando para visualizar a tela e inspecionar elementos**
 > uiautomatorviewer
+
+### ---- Comandos para rodar testes com Zoomba (desktop): ----
+
+<br/>
+
+*Observação: Para executar os testes com zoomba é preciso antes ter instalado o <u>WinAPPDriver</u> e <u>habilitar modo desenvolver do Windows</u>*
+
+<br/>
+
+**Executar todos testes com appium**
+> npm run robot:desktop
+
+**Executar teste na calculadora do Windows**
+> npm run robot:desktop-calculadora
+
+**Executar teste no bloco de notas do Windows**
+> npm run robot:desktop-notepad
+
+<br/>
+
+**Como inspecionar elementos no Windows?**
+> Baixar o programa https://docs.microsoft.com/en-us/windows/win32/winauto/inspect-objects <br/>
+> ou https://accessibilityinsights.io/

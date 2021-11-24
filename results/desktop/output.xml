@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.7 on win32)" generated="20211124 17:59:33.670" rpa="false" schemaversion="2">
+<suite id="s1" name="Notepad" source="C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\teste_desktop\notepad.robot">
+<kw name="Start Notepad" library="base" type="SETUP">
+<kw name="Remove Files" library="OperatingSystem">
+<arg>${PATH_DESKTOP_SCREENSHOTS}/*.png</arg>
+<doc>Uses `Remove File` to remove multiple files one-by-one.</doc>
+<msg timestamp="20211124 17:59:33.993" level="INFO" html="true">File '&lt;a href="file://C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\desktop\*.png"&gt;C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\desktop\*.png&lt;/a&gt;' does not exist.</msg>
+<status status="PASS" starttime="20211124 17:59:33.993" endtime="20211124 17:59:33.993"/>
+</kw>
+<kw name="Remove Files" library="OperatingSystem">
+<arg>${PATH_DESKTOP_VIDEOS_NOTEPAD}/*.gif</arg>
+<doc>Uses `Remove File` to remove multiple files one-by-one.</doc>
+<msg timestamp="20211124 17:59:33.994" level="INFO" html="true">Removed file '&lt;a href="file://C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\desktop\videos\notepad\Escrever uma frase_1.gif"&gt;C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\desktop\videos\notepad\Escrever uma frase_1.gif&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20211124 17:59:33.993" endtime="20211124 17:59:33.994"/>
+</kw>
+<kw name="Driver Setup" library="Zoomba.DesktopLibrary">
+<arg>${WIN_APP_DRIVER}</arg>
+<doc>Starts the WinAppDriver.</doc>
+<status status="PASS" starttime="20211124 17:59:33.994" endtime="20211124 17:59:33.998"/>
+</kw>
+<kw name="Open Application" library="Zoomba.DesktopLibrary">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=Windows</arg>
+<arg>deviceName=Windows</arg>
+<arg>app=${APP_NOTEPAD}</arg>
+<arg>alias=NOTEPAD</arg>
+<doc>Opens a new application to given Appium server.
+If your application has a splash screen please supply the window name of the final window that will appear.
+For the capabilities of appium server and Windows please check http://appium.io/docs/en/drivers/windows</doc>
+<status status="PASS" starttime="20211124 17:59:33.998" endtime="20211124 17:59:34.822"/>
+</kw>
+<kw name="Quit Application" library="Zoomba.DesktopLibrary">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20211124 17:59:34.822" endtime="20211124 17:59:34.839"/>
+</kw>
+<status status="PASS" starttime="20211124 17:59:33.993" endtime="20211124 17:59:34.839"/>
+</kw>
+<test id="s1-t1" name="Escrever uma frase">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Launch Application</arg>
+<arg>Setup Test ScreenCapLibrary Notepad</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Launch Application" library="Zoomba.DesktopLibrary">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20211124 17:59:34.840" endtime="20211124 17:59:34.912"/>
+</kw>
+<kw name="Setup Test ScreenCapLibrary Notepad" library="base">
+<kw name="Set Screenshot Directory" library="ScreenCapLibrary">
+<arg>${PATH_DESKTOP_VIDEOS_NOTEPAD}</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="PASS" starttime="20211124 17:59:34.912" endtime="20211124 17:59:34.913"/>
+</kw>
+<kw name="Start Gif Recording" library="ScreenCapLibrary">
+<arg>name=${TEST NAME}</arg>
+<arg>embed_width=1200px</arg>
+<arg>size_percentage=1</arg>
+<doc>Starts the recording of a GIF in the background with the specified ``name``.
+The recording can be stopped by calling the `Stop Gif Recording` keyword.</doc>
+<status status="PASS" starttime="20211124 17:59:34.913" endtime="20211124 17:59:34.914"/>
+</kw>
+<status status="PASS" starttime="20211124 17:59:34.912" endtime="20211124 17:59:34.914"/>
+</kw>
+<status status="PASS" starttime="20211124 17:59:34.840" endtime="20211124 17:59:34.914"/>
+</kw>
+<kw name="Escrever uma frase de exemplo" library="notepad">
+<arg>Essa frase é um teste do robot framework.</arg>
+<kw name="Wait For And Input Text" library="Zoomba.DesktopLibrary">
+<arg>${EDITOR_TEXTO}</arg>
+<arg>${mensagem}</arg>
+<doc>Wait for and type the given ``locator`` into text field identified by ``locator``.</doc>
+<msg timestamp="20211124 17:59:34.960" level="INFO">Typing text 'Essa frase é um teste do robot framework.' into text field 'Name=Editor de Texto'</msg>
+<status status="PASS" starttime="20211124 17:59:34.915" endtime="20211124 17:59:37.685"/>
+</kw>
+<status status="PASS" starttime="20211124 17:59:34.914" endtime="20211124 17:59:37.685"/>
+</kw>
+<kw name="Valida se a frase está aparecendo no arquivo" library="notepad">
+<arg>Essa frase é um teste do robot framework.</arg>
+<kw name="Wait Until Element Contains" library="Zoomba.DesktopLibrary">
+<arg>${EDITOR_TEXTO}</arg>
+<arg>${mensagemEsperada}</arg>
+<doc>Waits until element specified with ``locator`` contains ``text``.</doc>
+<msg timestamp="20211124 17:59:37.715" level="INFO">Verifying element '&lt;appium.webdriver.webelement.WebElement (session="CD1D252B-32E4-4F2A-8854-DE0E8A9BD95D", element="42.1967746")&gt;' contains text 'Essa frase é um teste do robot framework.'.</msg>
+<status status="PASS" starttime="20211124 17:59:37.686" endtime="20211124 17:59:37.720"/>
+</kw>
+<status status="PASS" starttime="20211124 17:59:37.686" endtime="20211124 17:59:37.720"/>
+</kw>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Quit Application</arg>
+<arg>Stop Gif Recording</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Quit Application" library="Zoomba.DesktopLibrary">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20211124 17:59:37.721" endtime="20211124 17:59:42.729"/>
+</kw>
+<kw name="Stop Gif Recording" library="ScreenCapLibrary">
+<doc>Stops the GIF recording and generates the file. If ``embed`` argument was set to ``True`` the
+GIF will be displayed in the log file.</doc>
+<msg timestamp="20211124 17:59:42.795" level="INFO" html="true">&lt;a href="videos/notepad/Escrever%20uma%20frase_1.gif"&gt;&lt;img src="videos/notepad/Escrever%20uma%20frase_1.gif" width="1200px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20211124 17:59:42.729" endtime="20211124 17:59:44.222"/>
+</kw>
+<status status="PASS" starttime="20211124 17:59:37.721" endtime="20211124 17:59:44.222"/>
+</kw>
+<tag>Windows</tag>
+<status status="PASS" starttime="20211124 17:59:34.839" endtime="20211124 17:59:44.223"/>
+</test>
+<kw name="Driver Teardown" library="Zoomba.DesktopLibrary" type="TEARDOWN">
+<doc>Stops the WinAppDriver.</doc>
+<status status="PASS" starttime="20211124 17:59:44.225" endtime="20211124 17:59:49.278"/>
+</kw>
+<doc>Testes Notepad com Zoomba</doc>
+<status status="PASS" starttime="20211124 17:59:33.671" endtime="20211124 17:59:49.278"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Windows</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Notepad">Notepad</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

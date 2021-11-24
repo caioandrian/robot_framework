@@ -19,6 +19,9 @@
     "robot:appium-aplicacao-nativa": "robot -d ./results/appium ./teste_appium/aplicacao_nativa.robot",
     "robot:appium-aplicacao-hibrida": "robot -d ./results/appium ./teste_appium/aplicacao_hibrida.robot",
     "robot:appium-swipe": "robot -d ./results/appium ./teste_appium/swipe.robot",
+    "robot:desktop-calculadora": "robot -d ./results/desktop ./teste_desktop/calculadora.robot",
+    "robot:desktop-notepad": "robot -d ./results/desktop ./teste_desktop/notepad.robot",
+    "robot:desktop": "robot -d ./results/desktop ./teste_desktop/*.robot",
     "robot:exemplos": "robot -d ./results ./teste_exemplos_robot_framework/*.robot"
   },
   "keywords": [],
