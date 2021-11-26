@@ -4,13 +4,14 @@ pipeline{
             image 'robotframework/rfdocker:latest'
         }
     }
-    stages{
-        withPythonEnv('python'){
-            steps{
-                sh "pip install --upgrade robotframework-screencaplibrary"
-                sh "pip install robotframework-seleniumlibrary"
+    withPythonEnv('python3'){
+        steps{
+            sh 'python --version'
+            sh "pip install --upgrade robotframework-screencaplibrary"
+            sh "pip install robotframework-seleniumlibrary"
             }
-        }
+    }
+    stages{
         stage('Setup'){
             steps{
                 sh "npm ci"
