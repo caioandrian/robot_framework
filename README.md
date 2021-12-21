@@ -1,8 +1,8 @@
 
  Exemplos usando robot framework com selenium e appium
 
-# Curso Robot Framework Udemy
-Conteúdo básico do curso + testes adicionais.
+# Robot Framework
+Conteúdo básico do curso (Udemy) + testes adicionais.
 * Nome do Curso: Testes Automatizados Usando Robot Framework – Módulo 1
 
 <br/>
