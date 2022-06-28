@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.7 on win32)" generated="20220628 16:26:34.635" rpa="false" schemaversion="2">
+<suite id="s1" name="Visit" source="C:\GitHubProjetos\robot_framework\teste_appium_web\visit.robot">
+<kw name="Open Test Application" library="base" type="SETUP">
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://127.0.0.1:4723/wd/hub</arg>
+<arg>automationName=${ANDROID_AUTOMATION_NAME}</arg>
+<arg>platformName=${ANDROID_PLATFORM_NAME}</arg>
+<arg>deviceName=${ANDROID_DEVICENAME}</arg>
+<arg>appActivity=${ANDROID_ACTIVY}</arg>
+<arg>noReset=True</arg>
+<arg>chromedriverExecutable=${CHROME_DRIVER}</arg>
+<arg>nativeWebScreenshot=True</arg>
+<arg>browserName=Chrome</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220628 16:26:35.147" endtime="20220628 16:26:46.694"/>
+</kw>
+<kw name="Remove Files" library="OperatingSystem">
+<arg>${PATH_SCREENSHOTS}/*.png</arg>
+<doc>Uses `Remove File` to remove multiple files one-by-one.</doc>
+<msg timestamp="20220628 16:26:46.695" level="INFO" html="true">File '&lt;a href="file://C:\GitHubProjetos\robot_framework\results\appium-web\*.png"&gt;C:\GitHubProjetos\robot_framework\results\appium-web\*.png&lt;/a&gt;' does not exist.</msg>
+<status status="PASS" starttime="20220628 16:26:46.694" endtime="20220628 16:26:46.695"/>
+</kw>
+<kw name="Remove Files" library="OperatingSystem">
+<arg>${PATH_VIDEOS}/*.gif</arg>
+<doc>Uses `Remove File` to remove multiple files one-by-one.</doc>
+<msg timestamp="20220628 16:26:46.696" level="INFO" html="true">Removed file '&lt;a href="file://C:\GitHubProjetos\robot_framework\results\appium-web\videos\screenshot_1.gif"&gt;C:\GitHubProjetos\robot_framework\results\appium-web\videos\screenshot_1.gif&lt;/a&gt;'.</msg>
+<status status="PASS" starttime="20220628 16:26:46.695" endtime="20220628 16:26:46.696"/>
+</kw>
+<kw name="Set Screenshot Directory" library="ScreenCapLibrary">
+<arg>${PATH_VIDEOS}</arg>
+<doc>Sets the directory where screenshots are saved.</doc>
+<status status="PASS" starttime="20220628 16:26:46.697" endtime="20220628 16:26:46.697"/>
+</kw>
+<kw name="Start Gif Recording" library="ScreenCapLibrary">
+<arg>embed_width=1200px</arg>
+<arg>size_percentage=1</arg>
+<doc>Starts the recording of a GIF in the background with the specified ``name``.
+The recording can be stopped by calling the `Stop Gif Recording` keyword.</doc>
+<status status="PASS" starttime="20220628 16:26:46.697" endtime="20220628 16:26:46.698"/>
+</kw>
+<status status="PASS" starttime="20220628 16:26:35.146" endtime="20220628 16:26:46.698"/>
+</kw>
+<test id="s1-t1" name="Valida a visita na pagina">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
+<arg>Launch Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Launch Application" library="AppiumLibrary">
+<doc>Launch application. Application can be launched while Appium session running.
+This keyword can be used to launch application during test case or between test cases.</doc>
+<status status="PASS" starttime="20220628 16:26:46.699" endtime="20220628 16:26:47.764"/>
+</kw>
+<status status="PASS" starttime="20220628 16:26:46.699" endtime="20220628 16:26:47.764"/>
+</kw>
+<kw name="Acessar página do google" library="visit">
+<kw name="Go To Url" library="AppiumLibrary">
+<arg>${URL_GOOGLE}</arg>
+<doc>Opens URL in default web browser.</doc>
+<status status="PASS" starttime="20220628 16:26:47.766" endtime="20220628 16:26:58.647"/>
+</kw>
+<status status="PASS" starttime="20220628 16:26:47.766" endtime="20220628 16:26:58.649"/>
+</kw>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20220628 16:26:58.649" endtime="20220628 16:26:58.768"/>
+</kw>
+<status status="PASS" starttime="20220628 16:26:46.698" endtime="20220628 16:26:58.769"/>
+</test>
+<kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
+<arg>Stop Gif Recording</arg>
+<arg>Close Application</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<kw name="Stop Gif Recording" library="ScreenCapLibrary">
+<doc>Stops the GIF recording and generates the file. If ``embed`` argument was set to ``True`` the
+GIF will be displayed in the log file.</doc>
+<msg timestamp="20220628 16:26:58.852" level="INFO" html="true">&lt;a href="videos/screenshot_1.gif"&gt;&lt;img src="videos/screenshot_1.gif" width="1200px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220628 16:26:58.770" endtime="20220628 16:27:00.523"/>
+</kw>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220628 16:27:00.523" endtime="20220628 16:27:00.683"/>
+</kw>
+<status status="PASS" starttime="20220628 16:26:58.769" endtime="20220628 16:27:00.683"/>
+</kw>
+<doc>Teste para validar visita no chrome</doc>
+<status status="PASS" starttime="20220628 16:26:34.638" endtime="20220628 16:27:00.683"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Visit">Visit</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

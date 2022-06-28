@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.1 (Python 3.9.7 on win32)" generated="20211016 19:19:36.945" rpa="false" schemaversion="2">
-<suite id="s1" name="Formulario" source="C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\teste_appium\formulario.robot">
+<robot generator="Robot 4.1.2 (Python 3.9.7 on win32)" generated="20220626 22:36:42.354" rpa="false" schemaversion="2">
+<suite id="s1" name="Abas" source="C:\GitHubProjetos\robot_framework\teste_appium\abas.robot">
 <kw name="Open Test Application" library="base" type="SETUP">
 <kw name="Open Application" library="AppiumLibrary">
 <arg>http://127.0.0.1:4723/wd/hub</arg>
@@ -18,593 +18,44 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 | *Option*            | *Man.* | *Description*     |
 | remote_url          | Yes    | Appium server url |
 | alias               | no     | alias             |</doc>
-<status status="PASS" starttime="20211016 19:19:37.310" endtime="20211016 19:19:41.170"/>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220626 22:36:54.120" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20220626 22:36:54.117" endtime="20220626 22:36:54.120"/>
+</kw>
+<msg timestamp="20220626 22:36:54.122" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220626 22:36:54.127" level="FAIL">WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.ctappium' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Cannot start the 'com.ctappium' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Activity name '.com.ctappium.MainActivity' used to start the app doesn't exist or cannot be launched! Make sure it exists and is a launchable activity
+</msg>
+<status status="FAIL" starttime="20220626 22:36:42.779" endtime="20220626 22:36:54.127"/>
 </kw>
 <kw name="Remove Files" library="OperatingSystem">
 <arg>${PATH_SCREENSHOTS}/*.png</arg>
 <doc>Uses `Remove File` to remove multiple files one-by-one.</doc>
-<msg timestamp="20211016 19:19:41.171" level="INFO" html="true">Removed file '&lt;a href="file://C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\appium\appium-screenshot-1.png"&gt;C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\appium\appium-screenshot-1.png&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20211016 19:19:41.170" endtime="20211016 19:19:41.172"/>
+<status status="NOT RUN" starttime="20220626 22:36:54.128" endtime="20220626 22:36:54.128"/>
 </kw>
 <kw name="Remove Files" library="OperatingSystem">
 <arg>${PATH_VIDEOS}/*.gif</arg>
 <doc>Uses `Remove File` to remove multiple files one-by-one.</doc>
-<msg timestamp="20211016 19:19:41.174" level="INFO" html="true">Removed file '&lt;a href="file://C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\appium\videos\screenshot_1.gif"&gt;C:\GitHubProjetos\curso_robot_framework\curso_robot_framework\results\appium\videos\screenshot_1.gif&lt;/a&gt;'.</msg>
-<status status="PASS" starttime="20211016 19:19:41.172" endtime="20211016 19:19:41.174"/>
+<status status="NOT RUN" starttime="20220626 22:36:54.128" endtime="20220626 22:36:54.128"/>
 </kw>
 <kw name="Set Screenshot Directory" library="ScreenCapLibrary">
 <arg>${PATH_VIDEOS}</arg>
 <doc>Sets the directory where screenshots are saved.</doc>
-<status status="PASS" starttime="20211016 19:19:41.175" endtime="20211016 19:19:41.177"/>
+<status status="NOT RUN" starttime="20220626 22:36:54.128" endtime="20220626 22:36:54.128"/>
 </kw>
 <kw name="Start Gif Recording" library="ScreenCapLibrary">
 <arg>embed_width=1200px</arg>
 <arg>size_percentage=1</arg>
 <doc>Starts the recording of a GIF in the background with the specified ``name``.
 The recording can be stopped by calling the `Stop Gif Recording` keyword.</doc>
-<status status="PASS" starttime="20211016 19:19:41.177" endtime="20211016 19:19:41.178"/>
+<status status="NOT RUN" starttime="20220626 22:36:54.128" endtime="20220626 22:36:54.128"/>
 </kw>
-<status status="PASS" starttime="20211016 19:19:37.310" endtime="20211016 19:19:41.178"/>
+<status status="FAIL" starttime="20220626 22:36:42.778" endtime="20220626 22:36:54.128"/>
 </kw>
-<test id="s1-t1" name="Interagir com campo de texto, checkbox e switch">
-<kw name="Run Keywords" library="BuiltIn" type="SETUP">
-<arg>Launch Application</arg>
-<arg>AND</arg>
-<arg>Valida se a tela principal está visível</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<kw name="Launch Application" library="AppiumLibrary">
-<doc>Launch application. Application can be launched while Appium session running.
-This keyword can be used to launch application during test case or between test cases.</doc>
-<status status="PASS" starttime="20211016 19:19:41.179" endtime="20211016 19:19:41.994"/>
-</kw>
-<kw name="Valida se a tela principal está visível" library="base">
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${ELEMENTO}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:41.995" endtime="20211016 19:19:47.155"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:41.995" endtime="20211016 19:19:47.155"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:41.179" endtime="20211016 19:19:47.155"/>
-</kw>
-<kw name="Acessar menu" library="menu">
-<arg>Formulário</arg>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<arg>${texto}</arg>
-<arg>20s</arg>
-<doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:47.157" endtime="20211016 19:19:47.282"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>${texto}</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20211016 19:19:47.282" endtime="20211016 19:19:47.374"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:47.156" endtime="20211016 19:19:47.375"/>
-</kw>
-<kw name="Preencher o nome" library="formulario">
-<arg>Caio</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${INPUT_FORMULARIO_NOME}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:47.377" endtime="20211016 19:19:48.187"/>
-</kw>
-<kw name="Input Text" library="AppiumLibrary">
-<arg>${INPUT_FORMULARIO_NOME}</arg>
-<arg>${nome}</arg>
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<msg timestamp="20211016 19:19:48.193" level="INFO">Typing text 'Caio' into text field 'accessibility_id=nome'</msg>
-<status status="PASS" starttime="20211016 19:19:48.189" endtime="20211016 19:19:48.815"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:47.376" endtime="20211016 19:19:48.815"/>
-</kw>
-<kw name="Valida o nome apresentado" library="formulario">
-<arg>Caio</arg>
-<kw name="Get Text" library="AppiumLibrary">
-<var>${valorAtual}</var>
-<arg>${INPUT_FORMULARIO_NOME}</arg>
-<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
-<msg timestamp="20211016 19:19:49.323" level="INFO">Element 'accessibility_id=nome' text is 'Caio' </msg>
-<msg timestamp="20211016 19:19:49.323" level="INFO">${valorAtual} = Caio</msg>
-<status status="PASS" starttime="20211016 19:19:48.816" endtime="20211016 19:19:49.323"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${valorAtual}</arg>
-<arg>${nome}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20211016 19:19:49.324" endtime="20211016 19:19:49.324"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:48.816" endtime="20211016 19:19:49.324"/>
-</kw>
-<kw name="Valida status do checkbox" library="formulario">
-<arg>false</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${CHECKBOX}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:49.324" endtime="20211016 19:19:49.355"/>
-</kw>
-<kw name="Get Element Attribute" library="AppiumLibrary">
-<var>${check}</var>
-<arg>${CHECKBOX}</arg>
-<arg>checked</arg>
-<doc>Get element attribute using given attribute: name, value,...</doc>
-<msg timestamp="20211016 19:19:49.429" level="INFO">Element 'class=android.widget.CheckBox' attribute 'checked' value 'false' </msg>
-<msg timestamp="20211016 19:19:49.429" level="INFO">${check} = false</msg>
-<status status="PASS" starttime="20211016 19:19:49.355" endtime="20211016 19:19:49.429"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${check}</arg>
-<arg>${status_previsto}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20211016 19:19:49.430" endtime="20211016 19:19:49.430"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:49.324" endtime="20211016 19:19:49.430"/>
-</kw>
-<kw name="Clicar no checkbox" library="formulario">
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${CHECKBOX}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:49.433" endtime="20211016 19:19:49.478"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>${CHECKBOX}</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211016 19:19:49.480" level="INFO">Clicking element 'class=android.widget.CheckBox'.</msg>
-<status status="PASS" starttime="20211016 19:19:49.478" endtime="20211016 19:19:49.546"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:49.432" endtime="20211016 19:19:49.547"/>
-</kw>
-<kw name="Valida status do checkbox" library="formulario">
-<arg>true</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${CHECKBOX}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:49.547" endtime="20211016 19:19:50.067"/>
-</kw>
-<kw name="Get Element Attribute" library="AppiumLibrary">
-<var>${check}</var>
-<arg>${CHECKBOX}</arg>
-<arg>checked</arg>
-<doc>Get element attribute using given attribute: name, value,...</doc>
-<msg timestamp="20211016 19:19:50.138" level="INFO">Element 'class=android.widget.CheckBox' attribute 'checked' value 'true' </msg>
-<msg timestamp="20211016 19:19:50.138" level="INFO">${check} = true</msg>
-<status status="PASS" starttime="20211016 19:19:50.067" endtime="20211016 19:19:50.138"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${check}</arg>
-<arg>${status_previsto}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20211016 19:19:50.139" endtime="20211016 19:19:50.139"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:49.547" endtime="20211016 19:19:50.140"/>
-</kw>
-<kw name="Valida status do switch" library="formulario">
-<arg>true</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${SWITCH}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:50.142" endtime="20211016 19:19:50.167"/>
-</kw>
-<kw name="Get Element Attribute" library="AppiumLibrary">
-<var>${check}</var>
-<arg>${SWITCH}</arg>
-<arg>checked</arg>
-<doc>Get element attribute using given attribute: name, value,...</doc>
-<msg timestamp="20211016 19:19:50.230" level="INFO">Element 'accessibility_id=switch' attribute 'checked' value 'true' </msg>
-<msg timestamp="20211016 19:19:50.231" level="INFO">${check} = true</msg>
-<status status="PASS" starttime="20211016 19:19:50.167" endtime="20211016 19:19:50.231"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${check}</arg>
-<arg>${status_previsto}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20211016 19:19:50.231" endtime="20211016 19:19:50.231"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:50.141" endtime="20211016 19:19:50.231"/>
-</kw>
-<kw name="Clicar no switch" library="formulario">
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${SWITCH}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:50.232" endtime="20211016 19:19:50.276"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>${SWITCH}</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211016 19:19:50.280" level="INFO">Clicking element 'accessibility_id=switch'.</msg>
-<status status="PASS" starttime="20211016 19:19:50.277" endtime="20211016 19:19:50.343"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:50.232" endtime="20211016 19:19:50.343"/>
-</kw>
-<kw name="Valida status do switch" library="formulario">
-<arg>false</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${SWITCH}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:50.344" endtime="20211016 19:19:50.396"/>
-</kw>
-<kw name="Get Element Attribute" library="AppiumLibrary">
-<var>${check}</var>
-<arg>${SWITCH}</arg>
-<arg>checked</arg>
-<doc>Get element attribute using given attribute: name, value,...</doc>
-<msg timestamp="20211016 19:19:50.994" level="INFO">Element 'accessibility_id=switch' attribute 'checked' value 'false' </msg>
-<msg timestamp="20211016 19:19:50.994" level="INFO">${check} = false</msg>
-<status status="PASS" starttime="20211016 19:19:50.397" endtime="20211016 19:19:50.994"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${check}</arg>
-<arg>${status_previsto}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20211016 19:19:50.994" endtime="20211016 19:19:50.994"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:50.344" endtime="20211016 19:19:50.994"/>
-</kw>
-<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
-<doc>Quit application. Application can be quit while Appium session is kept alive.
-This keyword can be used to close application during test case or between test cases.</doc>
-<status status="PASS" starttime="20211016 19:19:50.995" endtime="20211016 19:19:51.087"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:41.178" endtime="20211016 19:19:51.087"/>
-</test>
-<test id="s1-t2" name="Interagir com select e seek bar">
-<kw name="Run Keywords" library="BuiltIn" type="SETUP">
-<arg>Launch Application</arg>
-<arg>AND</arg>
-<arg>Valida se a tela principal está visível</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<kw name="Launch Application" library="AppiumLibrary">
-<doc>Launch application. Application can be launched while Appium session running.
-This keyword can be used to launch application during test case or between test cases.</doc>
-<status status="PASS" starttime="20211016 19:19:51.088" endtime="20211016 19:19:51.790"/>
-</kw>
-<kw name="Valida se a tela principal está visível" library="base">
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${ELEMENTO}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:51.791" endtime="20211016 19:19:52.952"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:51.791" endtime="20211016 19:19:52.953"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:51.088" endtime="20211016 19:19:52.953"/>
-</kw>
-<kw name="Acessar menu" library="menu">
-<arg>Formulário</arg>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<arg>${texto}</arg>
-<arg>20s</arg>
-<doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:52.954" endtime="20211016 19:19:53.134"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>${texto}</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20211016 19:19:53.134" endtime="20211016 19:19:53.233"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:52.953" endtime="20211016 19:19:53.233"/>
-</kw>
-<kw name="Selecionar um console na lista" library="formulario">
-<arg>Nintendo Switch</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${OPCAO_COMBO_CONSOLE}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:53.234" endtime="20211016 19:19:54.068"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>${OPCAO_COMBO_CONSOLE}</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211016 19:19:54.072" level="INFO">Clicking element 'class=android.widget.Spinner'.</msg>
-<status status="PASS" starttime="20211016 19:19:54.070" endtime="20211016 19:19:54.129"/>
-</kw>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<arg>${console}</arg>
-<doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:54.129" endtime="20211016 19:19:54.238"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>${console}</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20211016 19:19:54.238" endtime="20211016 19:19:54.919"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:53.233" endtime="20211016 19:19:54.920"/>
-</kw>
-<kw name="Valida console escolhido" library="formulario">
-<arg>Nintendo Switch</arg>
-<kw name="Get Text" library="AppiumLibrary">
-<var>${valorAtual}</var>
-<arg>xpath=//android.widget.Spinner/android.widget.TextView</arg>
-<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
-<msg timestamp="20211016 19:19:56.068" level="INFO">Element 'xpath=//android.widget.Spinner/android.widget.TextView' text is 'Nintendo Switch' </msg>
-<msg timestamp="20211016 19:19:56.069" level="INFO">${valorAtual} = Nintendo Switch</msg>
-<status status="PASS" starttime="20211016 19:19:54.921" endtime="20211016 19:19:56.069"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${valorAtual}</arg>
-<arg>${console}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20211016 19:19:56.069" endtime="20211016 19:19:56.069"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:54.920" endtime="20211016 19:19:56.069"/>
-</kw>
-<kw name="Definir um valor para o seekbar" library="formulario">
-<arg>0.86</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${SEEKBAR}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:56.072" endtime="20211016 19:19:56.128"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${delta}</var>
-<arg>50</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20211016 19:19:56.129" level="INFO">${delta} = 50</msg>
-<status status="PASS" starttime="20211016 19:19:56.129" endtime="20211016 19:19:56.129"/>
-</kw>
-<kw name="Get Element Size" library="AppiumLibrary">
-<var>${size_seekbar}</var>
-<arg>${SEEKBAR}</arg>
-<doc>Get element size</doc>
-<msg timestamp="20211016 19:19:56.195" level="INFO">Element 'accessibility_id=slid' size: {'height': 63, 'width': 1370} </msg>
-<msg timestamp="20211016 19:19:56.195" level="INFO">${size_seekbar} = {'height': 63, 'width': 1370}</msg>
-<status status="PASS" starttime="20211016 19:19:56.130" endtime="20211016 19:19:56.196"/>
-</kw>
-<kw name="Get Element Location" library="AppiumLibrary">
-<var>${loc_seekbar}</var>
-<arg>${SEEKBAR}</arg>
-<doc>Get element location</doc>
-<msg timestamp="20211016 19:19:56.249" level="INFO">Element 'accessibility_id=slid' location: {'x': 35, 'y': 714} </msg>
-<msg timestamp="20211016 19:19:56.249" level="INFO">${loc_seekbar} = {'x': 35, 'y': 714}</msg>
-<status status="PASS" starttime="20211016 19:19:56.196" endtime="20211016 19:19:56.249"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${xInicial}</var>
-<arg>${loc_seekbar['x']} + ${delta}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20211016 19:19:56.252" level="INFO">${xInicial} = 85</msg>
-<status status="PASS" starttime="20211016 19:19:56.249" endtime="20211016 19:19:56.252"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${x}</var>
-<arg>${xInicial} + (${size_seekbar['width']}-2 * ${delta}) * ${valor}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20211016 19:19:56.254" level="INFO">${x} = 1177.2</msg>
-<status status="PASS" starttime="20211016 19:19:56.252" endtime="20211016 19:19:56.254"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${y}</var>
-<arg>${loc_seekbar['y']} + (${size_seekbar['height']} / 2)</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20211016 19:19:56.256" level="INFO">${y} = 745.5</msg>
-<status status="PASS" starttime="20211016 19:19:56.254" endtime="20211016 19:19:56.256"/>
-</kw>
-<kw name="Click A Point" library="AppiumLibrary">
-<arg>${x}</arg>
-<arg>${y}</arg>
-<doc>Click on a point</doc>
-<msg timestamp="20211016 19:19:56.257" level="INFO">Clicking on a point (1177.2,745.5).</msg>
-<status status="PASS" starttime="20211016 19:19:56.256" endtime="20211016 19:19:57.921"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:56.071" endtime="20211016 19:19:57.922"/>
-</kw>
-<kw name="Clicar em salvar" library="formulario">
-<kw name="Click Text" library="AppiumLibrary">
-<arg>${TXT_BTN_SALVAR}</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20211016 19:19:57.925" endtime="20211016 19:19:58.032"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:57.924" endtime="20211016 19:19:58.033"/>
-</kw>
-<kw name="Valida valor salvo no seekbar" library="formulario">
-<arg>Slider: 86</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${RESULTADO_SEEKBAR}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:58.033" endtime="20211016 19:19:58.110"/>
-</kw>
-<kw name="Get Text" library="AppiumLibrary">
-<var>${valorAtual}</var>
-<arg>${RESULTADO_SEEKBAR}</arg>
-<doc>Get element text (for hybrid and mobile browser use `xpath` locator, others might cause problem)</doc>
-<msg timestamp="20211016 19:19:58.727" level="INFO">Element '//android.widget.TextView[starts-with(@text, 'Slider:')]' text is 'Slider: 86' </msg>
-<msg timestamp="20211016 19:19:58.727" level="INFO">${valorAtual} = Slider: 86</msg>
-<status status="PASS" starttime="20211016 19:19:58.110" endtime="20211016 19:19:58.727"/>
-</kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${valorAtual}</arg>
-<arg>${valor}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20211016 19:19:58.727" endtime="20211016 19:19:58.727"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:58.033" endtime="20211016 19:19:58.727"/>
-</kw>
-<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
-<doc>Quit application. Application can be quit while Appium session is kept alive.
-This keyword can be used to close application during test case or between test cases.</doc>
-<status status="PASS" starttime="20211016 19:19:58.728" endtime="20211016 19:19:58.848"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:51.088" endtime="20211016 19:19:58.849"/>
-</test>
-<test id="s1-t3" name="Interagir com data e horário">
-<kw name="Run Keywords" library="BuiltIn" type="SETUP">
-<arg>Launch Application</arg>
-<arg>AND</arg>
-<arg>Valida se a tela principal está visível</arg>
-<doc>Executes all the given keywords in a sequence.</doc>
-<kw name="Launch Application" library="AppiumLibrary">
-<doc>Launch application. Application can be launched while Appium session running.
-This keyword can be used to launch application during test case or between test cases.</doc>
-<status status="PASS" starttime="20211016 19:19:58.850" endtime="20211016 19:19:59.567"/>
-</kw>
-<kw name="Valida se a tela principal está visível" library="base">
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${ELEMENTO}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:19:59.567" endtime="20211016 19:20:00.694"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:59.567" endtime="20211016 19:20:00.694"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:58.850" endtime="20211016 19:20:00.694"/>
-</kw>
-<kw name="Acessar menu" library="menu">
-<arg>Formulário</arg>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<arg>${texto}</arg>
-<arg>20s</arg>
-<doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:20:00.696" endtime="20211016 19:20:00.842"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>${texto}</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20211016 19:20:00.842" endtime="20211016 19:20:00.932"/>
-</kw>
-<status status="PASS" starttime="20211016 19:20:00.695" endtime="20211016 19:20:00.934"/>
-</kw>
-<kw name="Selecionar nova data" library="formulario">
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<arg>${TXT_DATA}</arg>
-<doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:20:00.937" endtime="20211016 19:20:01.774"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>${TXT_DATA}</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20211016 19:20:01.774" endtime="20211016 19:20:01.860"/>
-</kw>
-<status status="PASS" starttime="20211016 19:20:00.935" endtime="20211016 19:20:01.861"/>
-</kw>
-<kw name="Escolher o dia" library="formulario">
-<arg>20</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${FRAME_DATA}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:20:01.862" endtime="20211016 19:20:02.036"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>xpath=//*[@text='${dia}']</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211016 19:20:02.039" level="INFO">Clicking element 'xpath=//*[@text='20']'.</msg>
-<status status="PASS" starttime="20211016 19:20:02.036" endtime="20211016 19:20:03.270"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20211016 19:20:04.271" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20211016 19:20:03.270" endtime="20211016 19:20:04.271"/>
-</kw>
-<status status="PASS" starttime="20211016 19:20:01.861" endtime="20211016 19:20:04.272"/>
-</kw>
-<kw name="Confirmar nova data" library="formulario">
-<kw name="Click Element" library="AppiumLibrary">
-<arg>${BTN_OK_FORM_DATA}</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211016 19:20:04.274" level="INFO">Clicking element 'id=android:id/button1'.</msg>
-<status status="PASS" starttime="20211016 19:20:04.272" endtime="20211016 19:20:04.418"/>
-</kw>
-<status status="PASS" starttime="20211016 19:20:04.272" endtime="20211016 19:20:04.419"/>
-</kw>
-<kw name="Valida se o texto está visível" library="base">
-<arg>20/2/2000</arg>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<arg>${texto}</arg>
-<arg>20s</arg>
-<doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:20:04.421" endtime="20211016 19:20:04.557"/>
-</kw>
-<kw name="Page Should Contain Text" library="AppiumLibrary">
-<arg>${texto}</arg>
-<doc>Verifies that current page contains `text`.</doc>
-<msg timestamp="20211016 19:20:05.085" level="INFO">Current page contains text '20/2/2000'.</msg>
-<status status="PASS" starttime="20211016 19:20:04.557" endtime="20211016 19:20:05.086"/>
-</kw>
-<status status="PASS" starttime="20211016 19:20:04.420" endtime="20211016 19:20:05.086"/>
-</kw>
-<kw name="Selecionar novo horário" library="formulario">
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<arg>${TXT_HORARIO}</arg>
-<doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:20:05.089" endtime="20211016 19:20:05.165"/>
-</kw>
-<kw name="Click Text" library="AppiumLibrary">
-<arg>${TXT_HORARIO}</arg>
-<doc>Click text identified by ``text``.</doc>
-<status status="PASS" starttime="20211016 19:20:05.165" endtime="20211016 19:20:05.827"/>
-</kw>
-<status status="PASS" starttime="20211016 19:20:05.088" endtime="20211016 19:20:05.828"/>
-</kw>
-<kw name="Escolher a hora" library="formulario">
-<arg>22</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${FRAME_HORARIO}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:20:05.830" endtime="20211016 19:20:06.616"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>accessibility_id=${hora}</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211016 19:20:06.618" level="INFO">Clicking element 'accessibility_id=22'.</msg>
-<status status="PASS" starttime="20211016 19:20:06.616" endtime="20211016 19:20:06.704"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20211016 19:20:07.713" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20211016 19:20:06.704" endtime="20211016 19:20:07.713"/>
-</kw>
-<status status="PASS" starttime="20211016 19:20:05.830" endtime="20211016 19:20:07.714"/>
-</kw>
-<kw name="Escolher o minuto" library="formulario">
-<arg>30</arg>
-<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
-<arg>${FRAME_HORARIO}</arg>
-<doc>Waits until element specified with `locator` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:20:07.717" endtime="20211016 19:20:07.824"/>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<arg>accessibility_id=${minuto}</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211016 19:20:07.829" level="INFO">Clicking element 'accessibility_id=30'.</msg>
-<status status="PASS" starttime="20211016 19:20:07.825" endtime="20211016 19:20:07.919"/>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<arg>1s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20211016 19:20:08.923" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20211016 19:20:07.920" endtime="20211016 19:20:08.923"/>
-</kw>
-<status status="PASS" starttime="20211016 19:20:07.716" endtime="20211016 19:20:08.923"/>
-</kw>
-<kw name="Confirmar novo horário" library="formulario">
-<kw name="Click Element" library="AppiumLibrary">
-<arg>${BTN_OK_FORM_HORARIO}</arg>
-<doc>Click element identified by `locator`.</doc>
-<msg timestamp="20211016 19:20:08.928" level="INFO">Clicking element 'xpath=//*[@text='OK']'.</msg>
-<status status="PASS" starttime="20211016 19:20:08.926" endtime="20211016 19:20:09.065"/>
-</kw>
-<status status="PASS" starttime="20211016 19:20:08.925" endtime="20211016 19:20:09.065"/>
-</kw>
-<kw name="Valida se o texto está visível" library="base">
-<arg>22:30</arg>
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<arg>${texto}</arg>
-<arg>20s</arg>
-<doc>Waits until `text` appears on current page.</doc>
-<status status="PASS" starttime="20211016 19:20:09.067" endtime="20211016 19:20:09.391"/>
-</kw>
-<kw name="Page Should Contain Text" library="AppiumLibrary">
-<arg>${texto}</arg>
-<doc>Verifies that current page contains `text`.</doc>
-<msg timestamp="20211016 19:20:09.696" level="INFO">Current page contains text '22:30'.</msg>
-<status status="PASS" starttime="20211016 19:20:09.391" endtime="20211016 19:20:09.696"/>
-</kw>
-<status status="PASS" starttime="20211016 19:20:09.066" endtime="20211016 19:20:09.697"/>
-</kw>
-<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
-<doc>Quit application. Application can be quit while Appium session is kept alive.
-This keyword can be used to close application during test case or between test cases.</doc>
-<status status="PASS" starttime="20211016 19:20:09.698" endtime="20211016 19:20:09.807"/>
-</kw>
-<status status="PASS" starttime="20211016 19:19:58.850" endtime="20211016 19:20:09.807"/>
+<test id="s1-t1" name="Valida a interação com abas">
+<status status="FAIL" starttime="20220626 22:36:54.128" endtime="20220626 22:36:54.129">Parent suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.ctappium' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Cannot start the 'com.ctappium' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Activity name '.com.ctappium.MainActivity' used to start the app doesn't exist or cannot be launched! Make sure it exists and is a launchable activity
+</status>
 </test>
 <kw name="Run Keywords" library="BuiltIn" type="TEARDOWN">
 <arg>Stop Gif Recording</arg>
@@ -613,28 +64,50 @@ This keyword can be used to close application during test case or between test c
 <kw name="Stop Gif Recording" library="ScreenCapLibrary">
 <doc>Stops the GIF recording and generates the file. If ``embed`` argument was set to ``True`` the
 GIF will be displayed in the log file.</doc>
-<msg timestamp="20211016 19:20:09.874" level="INFO" html="true">&lt;a href="videos/screenshot_1.gif"&gt;&lt;img src="videos/screenshot_1.gif" width="1200px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20211016 19:20:09.810" endtime="20211016 19:20:14.996"/>
+<msg timestamp="20220626 22:36:54.136" level="FAIL">No gif recordings are started!</msg>
+<status status="FAIL" starttime="20220626 22:36:54.134" endtime="20220626 22:36:54.136"/>
 </kw>
 <kw name="Close Application" library="AppiumLibrary">
 <doc>Closes the current application and also close webdriver session.</doc>
-<status status="PASS" starttime="20211016 19:20:14.996" endtime="20211016 19:20:15.113"/>
+<kw name="Capture Page Screenshot" library="AppiumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20220626 22:36:54.138" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20220626 22:36:54.137" endtime="20220626 22:36:54.139"/>
 </kw>
-<status status="PASS" starttime="20211016 19:20:09.809" endtime="20211016 19:20:15.113"/>
+<msg timestamp="20220626 22:36:54.141" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220626 22:36:54.143" level="FAIL">No application is open</msg>
+<status status="FAIL" starttime="20220626 22:36:54.136" endtime="20220626 22:36:54.143"/>
 </kw>
-<doc>Teste para validar preenchimento de formulário</doc>
-<status status="PASS" starttime="20211016 19:19:36.947" endtime="20211016 19:20:15.113"/>
+<status status="FAIL" starttime="20220626 22:36:54.134" endtime="20220626 22:36:54.143">Several failures occurred:
+
+1) No gif recordings are started!
+
+2) No application is open</status>
+</kw>
+<doc>Teste para validar cliques nas abas</doc>
+<status status="FAIL" starttime="20220626 22:36:42.355" endtime="20220626 22:36:54.143">Suite setup failed:
+WebDriverException: Message: An unknown server-side error occurred while processing the command. Original error: Cannot start the 'com.ctappium' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Cannot start the 'com.ctappium' application. Visit https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/android/activity-startup.md for troubleshooting. Original error: Activity name '.com.ctappium.MainActivity' used to start the app doesn't exist or cannot be launched! Make sure it exists and is a launchable activity
+
+
+Also suite teardown failed:
+Several failures occurred:
+
+1) No gif recordings are started!
+
+2) No application is open</status>
 </suite>
 <statistics>
 <total>
-<stat pass="3" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="3" fail="0" skip="0" id="s1" name="Formulario">Formulario</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Abas">Abas</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20220626 22:36:54.122" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
+<msg timestamp="20220626 22:36:54.141" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: No application is open</msg>
 </errors>
 </robot>
